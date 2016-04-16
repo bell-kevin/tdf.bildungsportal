@@ -24,10 +24,10 @@ class IBCenter(model.Schema):
     )
 
 
-    available_schoolsubjects = schema.List(title=_(u"Verfügbare Schulfächer"),
-        default=['Deutsch',
-                 'Mathematik',]
-        value_type=schema.TextLine())
+    available_schoolsubjects = schema.List(title=_(u"Schulfach"),
+                                           default=['Deutsch',
+                                                    'Mathematik',],
+                                           value_type=schema.TextLine())
 
 
     available_licenses =schema.List(title=_(u"Available Licenses"),
