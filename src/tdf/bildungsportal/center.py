@@ -89,5 +89,5 @@ class IBCenter(model.Schema):
 
 
 
-class IBCenterView(BrowserView):
+class BCenterView(BrowserView):
     pass
