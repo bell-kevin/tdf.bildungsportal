@@ -1,0 +1,11 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    i18n_domain="tdf.bildungsportal">
+
+    <permission
+        id="tdf.bildungsportal.AddProject"
+        title="tdf.bildungsportal: Add Project"
+        />
+
+
+</configure>
