@@ -1,36 +1,30 @@
 <?xml version="1.0"?>
-<object name="tdf.bildungsportal.center" meta_type="Dexterity FTI"
+<object name="tdf.bildugsportal.project" meta_type="Dexterity FTI"
         i18n:domain="tdf.bildungsportal" xmlns:i18n="http://xml.zope.org/namespaces/i18n">
 
     <!-- Basic metadata -->
-    <property name="title" i18n:translate="">LibreOffice Bildungsportal</property>
-    <property name="description" i18n:translate="">Ein LibreOffice Bildungsportal</property>
+    <property name="title" i18n:translate="">Projekt</property>
+    <property name="description" i18n:translate="">Ein Projekt</property>
 
     <property name="allow_discussion">True</property>
-    <property name="global_allow">True</property>
+    <property name="global_allow">False</property>
     <property name="filter_content_types">True</property>
     <property name="allowed_content_types">
-      <element value="tdf.bildungsportal.project" />
 
     </property>
 
     <!-- schema interface -->
-    <property name="schema">tdf.bildungsportal.center.IBCenter</property>
-
-    <!-- class used for content items -->
-    <property name="klass">plone.dexterity.content.Container</property>
+    <property name="schema">tdf.bildungsportal.project.IBProject</property>
 
     <!-- add permission -->
-    <property name="add_permission">cmf.AddPortalContent</property>
+    <property name="add_permission">tdf.bildungsportal.AddProject</property>
 
     <!-- enabled behaviors -->
     <property name="behaviors">
-        <element value="plone.app.content.interfaces.INameFromTitle" />
         <element value="plone.app.multilingual.dx.interfaces.IDexterityTranslatable" />
-        <element value="plone.app.dexterity.behaviors.exclfromnav.IExcludeFromNavigation"/>
-
-
+        <element value="plone.app.dexterity.behaviors.metadata.IOwnership" />
         <element value="plone.app.dexterity.behaviors.metadata.IPublication" />
+        <element value="collective.dexteritytextindexer.behavior.IDexterityTextIndexer" />
         <element value="cioppino.twothumbs.interfaces.ILoveThumbsDontYou" />
     </property>
 
