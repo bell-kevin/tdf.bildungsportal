@@ -41,6 +41,73 @@ def validateEmail(value):
 
 
 
+def isNotEmptySchoolsubject(value):
+    if not value:
+        raise Invalid(u'Bitte zumindest ein Schulfach vorgeben.')
+    return True
+
+
+def vocabSchoolsubjects(context):
+    # For add forms
+
+    # For other forms edited or displayed
+    from tdf.bildungsportal.center import IBCenter
+    while context is not None and not IBCenter.providedBy(context):
+        #context = aq_parent(aq_inner(context))
+        context = context.__parent__
+
+    schoolsubjects_list = []
+    if context is not None and context.available_schoolsubjects:
+        schoolsubjects_list = context.available_schoolsubjects
+
+    terms = []
+    for value in schoolsubjects_list:
+        terms.append(SimpleTerm(value, token=value.encode('unicode_escape'), title=value))
+
+    return SimpleVocabulary(terms)
+directlyProvides(vocabSchoolsubjects, IContextSourceBinder)
+
+
+def vocabAvailVersions(context):
+    """ pick up licenses list from parent """
+    # For other forms edited or displayed
+    from tdf.bildungsportal.center import IBCenter
+    while context is not None and not IBCenter.providedBy(context):
+        #context = aq_parent(aq_inner(context))
+        context = context.__parent__
+
+    versions_list = []
+    if context is not None and context.available_versions:
+        versions_list = context.available_versions
+
+    terms = []
+    for value in versions_list:
+        terms.append(SimpleTerm(value, token=value.encode('unicode_escape'), title=value))
+
+    return SimpleVocabulary(terms)
+directlyProvides(vocabAvailVersions, IContextSourceBinder)
+
+
+def vocabAvailLicenses(context):
+    """ pick up licenses list from parent """
+    # For other forms edited or displayed
+    from tdf.bildungsportal.center import IBCenter
+    while context is not None and not IBCenter.providedBy(context):
+        #context = aq_parent(aq_inner(context))
+        context = context.__parent__
+
+    licenses_list = []
+    if context is not None and context.available_licenses:
+        licenses_list = context.available_licenses
+
+    terms = []
+    for value in licenses_list:
+        terms.append(SimpleTerm(value, token=value.encode('unicode_escape'), title=value))
+
+    return SimpleVocabulary(terms)
+directlyProvides(vocabAvailLicenses, IContextSourceBinder)
+
+
 class IBProject(model.Schema):
 
     dexteritytextindexer.searchable('title')
@@ -64,6 +131,16 @@ class IBProject(model.Schema):
     )
 
 
+
+    dexteritytextindexer.searchable('schoolsubjects_choice')
+    form.widget(schoolsubjects_choice=CheckBoxFieldWidget)
+    schoolsubjects_choice = schema.List(
+        title=_(u"Schulfach"),
+        description=_(u"Bitte ein passendes Schulfach (auch mehrere Nennungen) vorgeben."),
+        value_type=schema.Choice(source=vocabSchoolsubjects),
+        constraint = isNotEmptySchoolsubject,
+        required=True
+    )
 
 
 
@@ -94,6 +171,25 @@ class IBProject(model.Schema):
 
 
 
+    form.widget(licenses_choice=CheckBoxFieldWidget)
+    licenses_choice= schema.List(
+        title=_(u'Lizenz der hochgeladenen Dateien'),
+        description=_(u"Bitte eine oder mehrere Lizenzen der hochgeladenen Dateien vorgeben."),
+        value_type=schema.Choice(source=vocabAvailLicenses),
+        required=True,
+    )
+
+
+
+    form.widget(compatibility_choice=CheckBoxFieldWidget)
+    compatibility_choice= schema.List(
+        title=_(u"Dateien sind getestet mit folgenden LibreOffice Versionen"),
+        description=_(u"Bitte markieren Sie die LibreOffice Versionen, mit denen die Dateien getestet wurden."),
+        value_type=schema.Choice(source=vocabAvailVersions),
+        required=True,
+    )
+
+
     file = NamedBlobFile(
         title=_(u"Erste hochzuladende Datei"),
         description=_(u"Bitte laden Sie Ihre Datei hoch."),
@@ -106,12 +202,12 @@ class IBProject(model.Schema):
     model.primary('information_further_file_uploads')
     information_further_file_uploads = RichText(
         title = _(u"Weitere Felder zum Hochladen von Projekt-Dateien"),
-        description = _(u"Falls Sie weitere Projekt-Dateien hochladen wollen, finden Sie entsprechende Felder auf dem Register 'Datei Hochladen 1'."),
+        description = _(u"Falls Sie weitere Projekt-Dateien hochladen wollen, finden Sie entsprechende Felder auf dem Register 'Weitere Dateien'."),
         required = False
      )
 
     form.fieldset('fileset1',
-        label=u"Datei Hochladen 1",
+        label=u"Weitere Dateien",
         fields=['file1', 'file2', 'file3', 'file4']
     )
 
