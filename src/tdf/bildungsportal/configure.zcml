@@ -58,4 +58,14 @@
       permission="zope2.View"
       />
 
+
+  <browser:page
+      name="view"
+      for="tdf.bildungsportal.project.IBProject"
+      class="tdf.bildungsportal.project.BProjectView"
+      template="project_templates/view.pt"
+      permission="zope2.View"
+      />
+
+
 </configure>
