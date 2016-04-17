@@ -108,6 +108,20 @@ def vocabAvailLicenses(context):
 directlyProvides(vocabAvailLicenses, IContextSourceBinder)
 
 
+
+@provider(IContextAwareDefaultFactory)
+def legal_declaration_title(context):
+    return context.title_legaldisclaimer
+
+
+@provider(IContextAwareDefaultFactory)
+def legal_declaration_text(context):
+    return context.legal_disclaimer
+
+
+class AcceptLegalDeclaration(Invalid):
+    __doc__ = _(u"Bitte akzeptieren Sie den Haftungsausschluss")
+
 class IBProject(model.Schema):
 
     dexteritytextindexer.searchable('title')
@@ -170,6 +184,27 @@ class IBProject(model.Schema):
     )
 
 
+    form.mode(title_declaration_legal='display')
+    title_declaration_legal=schema.TextLine(
+        title=_(u""),
+        required=False,
+        defaultFactory = legal_declaration_title
+    )
+
+
+    form.mode(declaration_legal='display')
+    declaration_legal = schema.Text(
+        title=_(u""),
+        required=False,
+        defaultFactory = legal_declaration_text
+
+    )
+
+    accept_legal_declaration=schema.Bool(
+        title=_(u"Akzeptieren des obigen Haftungsausschluss"),
+        description=_(u"Bitte akzeptieren Sie den obigen Haftungsausschluss"),
+        required=True
+    )
 
     form.widget(licenses_choice=CheckBoxFieldWidget)
     licenses_choice= schema.List(
@@ -237,6 +272,11 @@ class IBProject(model.Schema):
         description=_(u"Bitte laden Sie Ihre Datei hoch."),
         required=True,
     )
+
+    @invariant
+    def legaldeclarationaccepted(data):
+        if data.accept_legal_declaration is not True:
+           raise AcceptLegalDeclaration(_(u"Bitte akzeptieren Sie den Haftungsausschluss zum Hochladen Ihrer Dateien"))
 
 
 
