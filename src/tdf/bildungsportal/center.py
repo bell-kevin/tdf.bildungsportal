@@ -30,12 +30,12 @@ class IBCenter(model.Schema):
                                            value_type=schema.TextLine())
 
 
-    available_licenses =schema.List(title=_(u"Available Licenses"),
+    available_licenses =schema.List(title=_(u"Lizenzen"),
         default=['CC-by-sa-v3 (Creative Commons Attribution-ShareAlike 3.0)',
                  'CC-by-sa-v4 (Creative Commons Attribution-ShareAlike 4.0)',],
         value_type=schema.TextLine())
 
-    available_versions = schema.List(title=_(u"Available Versions"),
+    available_versions = schema.List(title=_(u"LibreOffice Versionen"),
         default=['LibreOffice 3.3',
                  'LibreOffice 3.4',
                  'LibreOffice 3.5',
@@ -48,6 +48,23 @@ class IBCenter(model.Schema):
                  'LibreOffice 5.0',
                  'LibreOffice 5.1'],
         value_type=schema.TextLine())
+
+
+    available_class_level = schema.List(title=_(u"Klassenstufen"),
+         default=['Klassenstufe 1',
+                  'Klassenstufe 2',
+                  'Klassenstufe 3',
+                  'Klassenstufe 4',
+                  'Klassenstufe 5',
+                  'Klassenstufe 6',
+                  'Klassenstufe 7',
+                  'Klassenstufe 8',
+                  'Klassenstufe 9',
+                  'Klassenstufe 10',
+                  'Klassenstufe 11',
+                  'Klassenstufe 12',
+                  'Klassenstufe 13'],
+         value_type=schema.TextLine())
 
 
 
