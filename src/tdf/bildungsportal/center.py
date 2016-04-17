@@ -70,31 +70,31 @@ class IBCenter(model.Schema):
 
 
     title_legaldisclaimer = schema.TextLine(
-        title=_(u"Title for Legal Disclaimer and Limitations"),
-        default=_(u"Legal Disclaimer and Limitations"),
+        title=_(u"Titel Haftungsausschluss und -begrenzung"),
+        default=_(u"Haftungsausschluss und -begrenzung"),
         required=False
     )
 
 
     legal_disclaimer = schema.Text(
-        title=_(u"Text of the Legal Disclaimer and Limitations"),
-        description=_(u"Enter the text of the legal disclaimer and limitations that should be displayed to the project creator and should be accepted by the owner of the project."),
+        title=_(u"Text von Haftungsausschluss und Begrenzung"),
+        description=_(u"Bitte den Text von Haftungsausschluss und -begrenzung eintragen, der vom Ersteller eines Projektes akzeptiert werden musss."),
         default=_(u"Fill in the legal disclaimer, that had to be accepted by the project owner"),
         required=False
     )
 
 
     title_legaldownloaddisclaimer = schema.TextLine(
-        title=_(u"Title of the Legal Disclaimer and Limitations for Downloads"),
-        default=_(u"Legal Disclaimer and Limitations for Downloads"),
+        title=_(u"Titel Hauftungsausschluss und -begrenzung zu Downloads"),
+        default=_(u"Hauftungsausschluss und -begrenzung zu Downloads"),
         required=False
     )
 
     form.primary('legal_downloaddisclaimer')
     legal_downloaddisclaimer = RichText(
-        title=_(u"Text of the Legal Disclaimer and Limitations for Downlaods"),
-        description=_(u"Enter any legal disclaimer and limitations for downloads that should appear on each page for dowloadable files."),
-        default=_(u"Fill in the text for the legal download disclaimer"),
+        title=_(u"Text von Haftungsausschluss und -begrenzung zu Downloads"),
+        description=_(u"Bitte den Text von Haftungsausschluss und -begrenzung zu Downloads hier eintragen, der auf jeder Projektseite bei den Downloads angezeigt wird."),
+        default=_(u"Bitte den Text zu Haftungsausschluss und -begrenzung bei Downloads hier eintragen."),
         required=False
     )
 
