@@ -21,6 +21,74 @@
 <metal:main fill-slot="main">
 
      <span tal:replace="structure context/@@authenticator/authenticator"/>
+    <h1 i18n:translate=""> <span i18n:name="portal_title" tal:content="context/title"  /></h1>
+
+    <div id="most_recent">
+        <h3 i18n:translate="most_recent_projects">Neueste Projekte</h3>
+        <div class=""
+                    tal:define="results python:view.get_latest_projects();
+                                Batch python:modules['Products.CMFPlone'].Batch;
+                                b_size python:5;b_start python:0;b_start request/b_start | b_start;
+                                ">
+                <tal:results condition="results"
+                                     define="batch python:Batch(results, b_size, int(b_start), orphan=1);">
+
+                    <ul class="newestproducts">
+                        <li tal:repeat="result batch">
+                            <tal:entry
+						                define="project result/getObject;
+						                url result/getURL;
+							            projectURL project/absolute_url;
+							            result_type result/portal_type;
+							            zoomid   python:project.id.replace('.', '_');
+							            screenshot   project/screenshot | nothing">
+
+                              <h3 style="border-top: none">
+                                           <a href="" tal:attributes="href projectURL;" 	tal:content="project/pretty_title_or_id">
+								           <tal:comment replace="nothing">Erstes Projekt</tal:comment></a>
+                                       </h3>
+						  </tal:entry>
+                        </li>
+                    </ul>
+                </tal:results>
+            </div>
+
+    </div>
+
+    <div id="most_recent">
+        <h3 i18n:translate="most_popular_projects">Beste Projekte</h3>
+        <div class=""
+                    tal:define="results python:view.get_most_popular_projects();
+                                Batch python:modules['Products.CMFPlone'].Batch;
+                                b_size python:5;b_start python:0;b_start request/b_start | b_start;
+                                ">
+                <tal:results condition="results"
+                                     define="batch python:Batch(results, b_size, int(b_start), orphan=1);">
+
+                    <ul class="newestproducts">
+                        <li tal:repeat="result batch">
+                            <tal:entry
+						                define="project result/getObject;
+						                url result/getURL;
+							            projectURL project/absolute_url;
+							            result_type result/portal_type;
+							            zoomid   python:project.id.replace('.', '_');
+							            screenshot   project/screenshot | nothing">
+
+                              <h3 style="border-top: none">
+                                           <a href="" tal:attributes="href projectURL;" 	tal:content="project/pretty_title_or_id">
+								           <tal:comment replace="nothing">Erstes Projekt</tal:comment></a>
+                                       </h3>
+						  </tal:entry>
+                        </li>
+                    </ul>
+                </tal:results>
+            </div>
+
+    </div>
+
+
+
 
 
 </metal:main>

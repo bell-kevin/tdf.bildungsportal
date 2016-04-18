@@ -107,4 +107,31 @@ class IBCenter(model.Schema):
 
 
 class BCenterView(BrowserView):
-    pass
+
+
+    def get_latest_projects(self):
+        self.catalog = api.portal.get_tool(name='portal_catalog')
+        sort_on = 'created'
+        contentFilter = {
+                          'sort_on' : sort_on,
+                          'sort_order' : 'reverse',
+                          'review_state': 'published',
+                          'portal_type':'tdf.bildungsportal.project'}
+
+        results = self.catalog(**contentFilter)
+
+        return results
+
+
+
+    def get_most_popular_projects(self):
+        catalog = api.portal.get_tool(name='portal_catalog')
+        sort_on = 'positive_ratings'
+        contentFilter = {
+                         'sort_on' : sort_on,
+                         'sort_order': 'reverse',
+                         'review_state': 'published',
+                         'portal_type' : 'tdf.bildungsportal.project'}
+        return catalog(**contentFilter)
+
+
