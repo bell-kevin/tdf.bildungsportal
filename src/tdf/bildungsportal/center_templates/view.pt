@@ -24,7 +24,7 @@
     <h1 i18n:translate=""> <span i18n:name="portal_title" tal:content="context/title"  /></h1>
 
     <div id="most_recent">
-        <h3 i18n:translate="most_recent_projects">Neueste Projekte</h3>
+        <h2 i18n:translate="most_recent_projects">Neueste Projekte</h2>
         <div class=""
                     tal:define="results python:view.get_latest_projects();
                                 Batch python:modules['Products.CMFPlone'].Batch;
@@ -56,7 +56,7 @@
     </div>
 
     <div id="most_recent">
-        <h3 i18n:translate="most_popular_projects">Beste Projekte</h3>
+        <h2 i18n:translate="most_popular_projects">Best bewertete Projekte</h2>
         <div class=""
                     tal:define="results python:view.get_most_popular_projects();
                                 Batch python:modules['Products.CMFPlone'].Batch;
@@ -87,7 +87,40 @@
 
     </div>
 
+    <div id="by-schoolsubject">
 
+        <h2 i18n:translate="">Suche nach Schulfächern</h2>
+
+
+        <ol id="project-schoolsubjects">
+            <tal:schoolsubjects repeat="schoolsubject context/available_schoolsubjects">
+                <li><a href=""
+                        tal:attributes="href string:${context/absolute_url}"
+                        tal:content="schoolsubject">
+                        <tal:comment replace="nothing">Schulfach</tal:comment>
+                        </a>
+                </li>
+            </tal:schoolsubjects>
+        </ol>
+    </div>
+
+
+    <div id="by-classlevel">
+
+        <h2 i18n:translate="">Suche nach Klassenstufen</h2>
+
+
+        <ol id="project-classlevel">
+            <tal:classlevel repeat="classlevel context/available_class_level">
+                <li><a href=""
+                        tal:attributes="href string:${context/absolute_url}"
+                        tal:content="classlevel">
+                        <tal:comment replace="nothing">Schulfach</tal:comment>
+                        </a>
+                </li>
+            </tal:classlevel>
+        </ol>
+    </div>
 
 
 
