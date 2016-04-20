@@ -135,3 +135,14 @@ class BCenterView(BrowserView):
         return catalog(**contentFilter)
 
 
+
+    def get_latest_libreoffice_release(self):
+        """Get the latest version from the vocabulary. This only
+        goes by string sorting so would need to be reworked if the
+        LibreOffice versions dramatically changed"""
+
+        versions = list(self.context.available_versions)
+        versions.sort(reverse=True)
+        return versions[0]
+
+
