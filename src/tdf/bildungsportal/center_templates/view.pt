@@ -19,6 +19,10 @@
 
 <body>
 <metal:main fill-slot="main">
+    <tal:main-macro metal:define-macro="main"
+            tal:define="catalog nocall:context/portal_catalog;
+                        toLocalizedTime nocall:context/@@plone/toLocalizedTime;
+                        currentVersion request/getCompatibility |view/get_latest_libreoffice_release;">
 
      <span tal:replace="structure context/@@authenticator/authenticator"/>
     <h1 i18n:translate=""> <span i18n:name="portal_title" tal:content="context/title"  /></h1>
@@ -123,7 +127,7 @@
     </div>
 
 
-
+</tal:main-macro>
 </metal:main>
 </body>
 
