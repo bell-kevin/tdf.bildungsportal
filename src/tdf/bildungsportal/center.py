@@ -145,4 +145,8 @@ class BCenterView(BrowserView):
         versions.sort(reverse=True)
         return versions[0]
 
+    def schoolsubject_name(self):
+        schoolsubject = list(self.context.available_schoolsubjects)
+        return schoolsubject
+
 
