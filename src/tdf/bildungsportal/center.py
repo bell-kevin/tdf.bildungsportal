@@ -149,4 +149,8 @@ class BCenterView(BrowserView):
         schoolsubject = list(self.context.available_schoolsubjects)
         return schoolsubject
 
+    def classlevel_name(self):
+        classlevel = list(self.context.available_class_level)
+        return classlevel
+
 
