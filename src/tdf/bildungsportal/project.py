@@ -249,28 +249,28 @@ class IBProject(model.Schema):
     file1 = NamedBlobFile(
         title=_(u"Zweite hochzuladende Datei"),
         description=_(u"Bitte laden Sie Ihre Datei hoch."),
-        required=True,
+        required=False,
     )
 
 
     file2 = NamedBlobFile(
         title=_(u"Dritte hochzuladende Datei"),
         description=_(u"Bitte laden Sie Ihre Datei hoch."),
-        required=True,
+        required=False,
     )
 
 
     file3 = NamedBlobFile(
         title=_(u"Vierte hochzuladende Datei"),
         description=_(u"Bitte laden Sie Ihre Datei hoch."),
-        required=True,
+        required=False,
     )
 
 
     file4 = NamedBlobFile(
         title=_(u"Fuenfte hochzuladende Datei"),
         description=_(u"Bitte laden Sie Ihre Datei hoch."),
-        required=True,
+        required=False,
     )
 
     @invariant
@@ -286,4 +286,6 @@ class IBProject(model.Schema):
 
 
 class BProjectView(BrowserView):
-    pass
+
+    def releaseDate(self):
+        return self.context.toLocalizedTime()
