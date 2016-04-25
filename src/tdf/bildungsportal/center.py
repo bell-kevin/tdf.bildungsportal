@@ -153,4 +153,25 @@ class BCenterView(BrowserView):
         classlevel = list(self.context.available_class_level)
         return classlevel
 
+    def get_products(self, schoolsubject, version, classlevel, sort_on, SearchableText=None):
+        self.catalog = api.portal.get_tool(name='portal_catalog')
+        sort_on = 'positive_ratings'
+        contentFilter = {
+	                     'sort_on' : sort_on,
+
+                         'SearchableText': SearchableText,
+	                     'sort_order': 'reverse',
+                         'portal_type': 'tdf.bildungsportal.project'}
+
+        if version != 'any':
+            contentFilter['getCompatibility'] = version
+
+        if schoolsubject:
+            contentFilter['getSchoolsubjects'] = schoolsubject
+
+        if classlevel:
+            contentFilter['getClasslevel'] = classlevel
+
+        return self.catalog(**contentFilter)
+
 
