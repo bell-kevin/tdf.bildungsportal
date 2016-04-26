@@ -122,6 +122,11 @@ def legal_declaration_text(context):
 class AcceptLegalDeclaration(Invalid):
     __doc__ = _(u"Bitte akzeptieren Sie den Haftungsausschluss")
 
+
+class ProvideScreenshotLogo(Invalid):
+    __doc__ =  _(u"Please add a Screenshot or a Logo to your project")
+
+
 class IBProject(model.Schema):
 
     dexteritytextindexer.searchable('title')
@@ -132,7 +137,7 @@ class IBProject(model.Schema):
         max_length=50
     )
 
-    dexteritytextindexer.searchable('Beschreibung')
+    dexteritytextindexer.searchable('description')
     description = schema.Text(
         title=_(u"Projekt Kurzbeschreibung"),
     )
@@ -279,6 +284,11 @@ class IBProject(model.Schema):
            raise AcceptLegalDeclaration(_(u"Bitte akzeptieren Sie den Haftungsausschluss zum Hochladen Ihrer Dateien"))
 
 
+
+    @invariant
+    def missingScreenshotOrLogo(data):
+        if not data.screenshot and not data.project_logo:
+            raise ProvideScreenshotLogo(_(u'Please add a Screenshot or a Logo to your project page'))
 
 
 
