@@ -68,6 +68,33 @@ def vocabSchoolsubjects(context):
 directlyProvides(vocabSchoolsubjects, IContextSourceBinder)
 
 
+
+def isNotEmptyClasslevel(value):
+    if not value:
+        raise Invalid(u'Bitte zumindest eine Klassenstufe vorgeben.')
+    return True
+
+
+def vocabClasslevel(context):
+    # For add forms
+
+    # For other forms edited or displayed
+    from tdf.bildungsportal.center import IBCenter
+    while context is not None and not IBCenter.providedBy(context):
+        #context = aq_parent(aq_inner(context))
+        context = context.__parent__
+
+    classlevel_list = []
+    if context is not None and context.available_classlevel:
+        classlevel_list = context.available_classlevel
+
+    terms = []
+    for value in classlevel_list:
+        terms.append(SimpleTerm(value, token=value.encode('unicode_escape'), title=value))
+
+    return SimpleVocabulary(terms)
+directlyProvides(vocabClasslevel, IContextSourceBinder)
+
 def vocabAvailVersions(context):
     """ pick up licenses list from parent """
     # For other forms edited or displayed
@@ -161,6 +188,15 @@ class IBProject(model.Schema):
         required=True
     )
 
+    dexteritytextindexer.searchable('classlevel_choice')
+    form.widget(classlevel_choice=CheckBoxFieldWidget)
+    classlevel_choice = schema.List(
+        title=_(u"Klassenstufe"),
+        description=_(u"Bitte eine passende Klassenstufe (auch mehrere Nennungen) vorgeben."),
+        value_type=schema.Choice(source=vocabClasslevel),
+        constraint = isNotEmptyClasslevel,
+        required=True
+    )
 
 
 
