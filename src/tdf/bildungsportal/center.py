@@ -26,7 +26,12 @@ class IBCenter(model.Schema):
 
     available_schoolsubjects = schema.List(title=_(u"Schulfach"),
                                            default=['Deutsch',
-                                                    'Mathematik',],
+                                                    'Englisch',
+                                                    'Erdkunde',
+                                                    'Geschichte',
+                                                    'Mathematik',
+                                                    'Religion'
+                                                    ],
                                            value_type=schema.TextLine())
 
 
@@ -50,7 +55,7 @@ class IBCenter(model.Schema):
         value_type=schema.TextLine())
 
 
-    available_class_level = schema.List(title=_(u"Klassenstufen"),
+    available_classlevel = schema.List(title=_(u"Klassenstufen"),
          default=['Klassenstufe 1',
                   'Klassenstufe 2',
                   'Klassenstufe 3',
@@ -153,7 +158,7 @@ class BCenterView(BrowserView):
         classlevel = list(self.context.available_class_level)
         return classlevel
 
-    def get_products(self, schoolsubject, version, classlevel, sort_on, SearchableText=None):
+    def get_products(self, version, schoolsubject, classlevel, sort_on, SearchableText=None):
         self.catalog = api.portal.get_tool(name='portal_catalog')
         sort_on = 'positive_ratings'
         contentFilter = {
@@ -166,11 +171,13 @@ class BCenterView(BrowserView):
         if version != 'any':
             contentFilter['getCompatibility'] = version
 
-        if schoolsubject:
-            contentFilter['getSchoolsubjects'] = schoolsubject
+        if schoolsubject != 'any':
+            contentFilter['getSchoolsubject'] = schoolsubject
 
-        if classlevel:
+        if classlevel != 'any':
             contentFilter['getClasslevel'] = classlevel
+
+
 
         return self.catalog(**contentFilter)
 
