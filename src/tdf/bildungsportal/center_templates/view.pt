@@ -99,13 +99,13 @@
 
     <div id="by-schoolsubject">
 
-        <h2 i18n:translate="">Suche nach Schulfächern</h2>
+        <h2 i18n:translate="">Suche nach Schulfaechern</h2>
 
 
         <ol id="project-schoolsubjects">
             <tal:schoolsubjects repeat="schoolsubject context/available_schoolsubjects">
                 <li><a href=""
-                        tal:attributes="href string:${context/absolute_url}"
+                        tal:attributes="href string:${context/absolute_url}?getSchoolsubject=${schoolsubject}&getCompatibility=any&getClasslevel=any"
                         tal:content="schoolsubject">
                         <tal:comment replace="nothing">Schulfach</tal:comment>
                         </a>
@@ -121,11 +121,11 @@
 
 
         <ol id="project-classlevel">
-            <tal:classlevel repeat="classlevel context/available_class_level">
+            <tal:classlevel repeat="classlevel context/available_classlevel">
                 <li><a href=""
-                        tal:attributes="href string:${context/absolute_url}"
+                        tal:attributes="href string:${context/absolute_url}?getClasslevel=${classlevel}&getCompatibility=any&getSchoolsubject=any"
                         tal:content="classlevel">
-                        <tal:comment replace="nothing">Schulfach</tal:comment>
+                        <tal:comment replace="nothing">Klassenstufe</tal:comment>
                         </a>
                 </li>
             </tal:classlevel>
@@ -137,12 +137,14 @@
                 <div id="sort-by">
                     <form id="product_select" style="margin-bottom: 1em" tal:attributes="action string:${context/absolute_url}">
                         <label class="hiddenStructure" i18n:translate="">Show</label>
-                        <select name="getSchoolsubjects" onchange="this.form.submit()">
+
+                        <select name="getSchoolsubject" onchange="this.form.submit()">
                             <option value="" i18n:translate="">Alle Schulfaecher</option>
                             <tal:block tal:repeat="schoolsubject context/available_schoolsubjects">
                                     <option tal:content="schoolsubject" tal:attributes="value schoolsubject; selected python:(currentSchoolsubject==schoolsubject, 'selected', nothing)" />
                                 </tal:block>
                         </select>
+
                         <select name="getCompatibility" onchange="this.form.submit()">
                             <tal:block tal:repeat="version context/available_versions">
                                 <option tal:content="version"
@@ -151,14 +153,16 @@
                             <option value="any" tal:attributes="selected python: (currentVersion in ['', 'any'],'selected',nothing)"
                                           i18n:translate="label_any_version"> Jede Version</option>
                         </select>
+
                         <select name="getClasslevel" onchange="this.form.submit()">
-                            <tal:block tal:repeat="classlevel context/available_class_level">
+                            <tal:block tal:repeat="classlevel context/available_classlevel">
                                 <option tal:content="classlevel"
                                         tal:attributes="value classlevel; selected python: (currentClasslevel==classlevel, 'selected', nothing)" />
                             </tal:block>
                             <option value="any" tal:attributes="selected python: (currentClasslevel in ['', 'any'], 'selected', nothing)"
                                         i18n:translate="label_any_classlevel">Jede Klassenstufe</option>
                         </select>
+
                         <label for="project-sort" i18n:translate="">Sort On</label>
                         <select name="sort_on" id="project-sort" onchange="this.form.submit()">
                             <option value="positive ratings" tal:attributes="selected    python:sort_on == 'positive_ratings' and 'selected' ''" i18n:translate="">Highest Rated</option>
@@ -173,7 +177,7 @@
                 </div>
 
                 <div class="" id="categories"
-                            tal:define="results python:view.get_products(currentSchoolsubject, currentVersion, currentClasslevel, sort_on, SearchableText);
+                            tal:define="results python:view.get_products(currentVersion, currentSchoolsubject, currentClasslevel, sort_on, SearchableText);
                                         Batch python:modules['Products.CMFPlone'].Batch;
 				                        b_size python:10;b_start python:0;b_start request/b_start | b_start;
                                         ">
@@ -224,6 +228,8 @@
 
 								<span i18n:translate="">in</span>
                             <span tal:replace="python:', '.join(result.getObject().schoolsubjects_choice)"></span>
+                                <span i18n:translate="">für</span>
+                                <span tal:replace="python:', '.join(result.getObject().classlevel_choice)"></span>
                             </span>
 							<p class="product-description"
                                     tal:content="structure project/description">
