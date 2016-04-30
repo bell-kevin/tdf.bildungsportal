@@ -25,6 +25,8 @@ from collective import dexteritytextindexer
 from Products.Five import BrowserView
 import re
 from plone.namedfile.field import NamedBlobImage
+from z3c.form import validator
+from plone.uuid.interfaces import IUUID
 
 
 
@@ -327,6 +329,29 @@ class IBProject(model.Schema):
             raise ProvideScreenshotLogo(_(u'Please add a Screenshot or a Logo to your project page'))
 
 
+
+class ValidateBProjectUniqueness(validator.SimpleFieldValidator):
+    #Validate site-wide uniqueness of project titles.
+
+
+    def validate(self, value):
+        # Perform the standard validation first
+        super(ValidateBProjectUniqueness, self).validate(value)
+
+        if value is not None:
+            catalog = api.portal.get_tool(name='portal_catalog')
+            results = catalog({'Title': value,
+                               'object_provides': IBProject.__identifier__})
+
+            contextUUID = IUUID(self.context, None)
+            for result in results:
+                if result.UID != contextUUID:
+                    raise Invalid(_(u"The project title is already in use"))
+
+validator.WidgetValidatorDiscriminators(
+    ValidateBProjectUniqueness,
+    field=IBProject['title'],
+)
 
 
 
