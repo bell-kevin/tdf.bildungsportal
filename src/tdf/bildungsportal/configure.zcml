@@ -72,5 +72,9 @@
     factory=".project.ValidateBProjectUniqueness"
     />
 
+  <browser:resourceDirectory
+    name="tdf.bildungsportal"
+    directory="resources" />
+
 
 </configure>
