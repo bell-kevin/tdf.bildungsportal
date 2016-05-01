@@ -27,6 +27,7 @@ import re
 from plone.namedfile.field import NamedBlobImage
 from z3c.form import validator
 from plone.uuid.interfaces import IUUID
+from plone.dexterity.browser.view import DefaultView
 
 
 
@@ -356,7 +357,7 @@ validator.WidgetValidatorDiscriminators(
 
 
 
-class BProjectView(BrowserView):
+class BProjectView(DefaultView):
 
     def releaseDate(self):
         return self.context.toLocalizedTime()
