@@ -19,10 +19,58 @@
 
 <body>
 <metal:main fill-slot="main">
+    <tal:main-macro metal:define-macro="main" tal:define="toLocalizedTime nocall:context/@@plone/toLocalizedTime;
+                                                          is_editable context/@@plone_context_state/is_editable;
+                                                          wf_tool here/portal_workflow;
+                                                          review_state python:wf_tool.getInfoFor( here, 'review_state', '');">
 
-     <span tal:replace="structure context/@@authenticator/authenticator"/>
+        <div class="grid-row">
+            <div class="grid-cell position-leftmost width-two-thirds">
+                <span tal:replace="structure context/@@authenticator/authenticator"/>
+                <p class="portalinfomessage"
+                        tal:condition="python: is_editable and not review_state == 'published' "
+                        i18n:domain="plone" i18n:translate="description_cannot_add_before_approved">
+                    Please make sure the relevant project information has been entered and a release has been added to your project.
+                    Once you have finished that you could submit your project for approval (publication).
+                </p>
+                <div class="panproject">
+                    <h1 class="documentFirstHeading"><span tal:content="context/title" /></h1>
+                    <div tal:content="structure context/@@rate-if-you-dare" />
+                    <p class="documentDescription"><span tal:content="context/description" /></p>
+                    <h2 class="documentSecondHeading">Projekt-Beschreibung</h2>
+                    <p class="documentDescription" tal:content="structure view/w/details/render" />
+                    <h3>Schulfach/Schulfaecher</h3>
+                    <div tal:content="structure view/w/schoolsubjects_choice/render" />
+                    <h3>Klassenstufe/Klassenstufen</h3>
+                    <div tal:content="structure view/w/classlevel_choice/render" />
+                    <h3 tal:condition="context/homepage">Homepage des Projekts</h3>
+                    <div tal:content="context/homepage" />
+                     <h3>Lizenz</h3>
+                         <div tal:content="structure view/w/licenses_choice/render" />
+                    <h3>Getestet mit LibreOffice Versionen</h3>
+                    <div tal:content="structure view/w/compatibility_choice/render" />
+                    <h4>Logo</h4>
+                    <img src="" alt=""
+                            tal:condition="context/project_logo|nothing"
+                            tal:define="scales context/@@images;
+                            scale python:scales.scale('project_logo', 'mini')"
+                            tal:replace="structure python:scale and scale.tag(css_class='eupcenterprojectlogo') or None" />
+                     <div tal:condition="context/screenshot">
+                         <h4 i18n:translate="title_screenshot">Screenshot</h4>
+                         <div class="eupcenterprojectscreenshot" width="250px" tal:define="screenshot nocall:context/screenshot"
+                                 tal:condition="nocall:screenshot">
+                             <img tal:define="scales context/@@images"
+                                     tal:replace="structure python: scales.tag('screenshot',
+                                             width=250, height=200, direction='down')" />
+                         </div>
+                     </div>
 
+                    <p tal:condition="context/file"> <a i18n:translate="label_downloadable_file" tal:attributes="href string:${context/absolute_url}/@@download/file/${context/file/filename}"><img src="++resource++tdf.bildungsportal/download_icon.gif" /></a> <a i18n:translate="label_downloadable_file" tal:attributes="href string:${context/absolute_url}/@@download/file/${context/file/filename}">
+        Die herunterladbare Datei</a><br />Datei-Groesse: <span tal:content="python:context.file.size /1024" /> kb</p>
 
+            </div>
+        </div>
+    </tal:main-macro>
 </metal:main>
 </body>
 
