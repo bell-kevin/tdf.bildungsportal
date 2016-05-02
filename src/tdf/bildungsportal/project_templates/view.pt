@@ -66,7 +66,15 @@
                      </div>
 
                     <p tal:condition="context/file"> <a i18n:translate="label_downloadable_file" tal:attributes="href string:${context/absolute_url}/@@download/file/${context/file/filename}"><img src="++resource++tdf.bildungsportal/download_icon.gif" /></a> <a i18n:translate="label_downloadable_file" tal:attributes="href string:${context/absolute_url}/@@download/file/${context/file/filename}">
-        Die herunterladbare Datei</a><br />Datei-Groesse: <span tal:content="python:context.file.size /1024" /> kb</p>
+                       Die herunterladbare Datei</a><br />Datei-Groesse: <span tal:content="python:context.file.size /1024" /> kb</p>
+                    <p tal:condition="context/file1"> <a i18n:translate="label_downloadable_file" tal:attributes="href string:${context/absolute_url}/@@download/file1/${context/file1/filename}"><img src="++resource++tdf.bildungsportal/download_icon.gif" /></a> <a i18n:translate="label_downloadable_file" tal:attributes="href string:${context/absolute_url}/@@download/file1/${context/file1/filename}">
+                       Die herunterladbare Datei</a><br />Datei-Groesse: <span tal:content="python:context.file1.size /1024" /> kb</p>
+                    <p tal:condition="context/file2"> <a i18n:translate="label_downloadable_file" tal:attributes="href string:${context/absolute_url}/@@download/file2/${context/file2/filename}"><img src="++resource++tdf.bildungsportal/download_icon.gif" /></a> <a i18n:translate="label_downloadable_file" tal:attributes="href string:${context/absolute_url}/@@download/file2/${context/file2/filename}">
+                       Die herunterladbare Datei</a><br />Datei-Groesse: <span tal:content="python:context.file2.size /1024" /> kb</p>
+                    <p tal:condition="context/file3"> <a i18n:translate="label_downloadable_file" tal:attributes="href string:${context/absolute_url}/@@download/file3/${context/file3/filename}"><img src="++resource++tdf.bildungsportal/download_icon.gif" /></a> <a i18n:translate="label_downloadable_file" tal:attributes="href string:${context/absolute_url}/@@download/file3/${context/file3/filename}">
+                       Die herunterladbare Datei</a><br />Datei-Groesse: <span tal:content="python:context.file3.size /1024" /> kb</p>
+                    <p tal:condition="context/file4"> <a i18n:translate="label_downloadable_file" tal:attributes="href string:${context/absolute_url}/@@download/file4/${context/file4/filename}"><img src="++resource++tdf.bildungsportal/download_icon.gif" /></a> <a i18n:translate="label_downloadable_file" tal:attributes="href string:${context/absolute_url}/@@download/file4/${context/file4/filename}">
+                       Die herunterladbare Datei</a><br />Datei-Groesse: <span tal:content="python:context.file4.size /1024" /> kb</p>
 
             </div>
         </div>
