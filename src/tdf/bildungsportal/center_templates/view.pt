@@ -177,7 +177,7 @@
                 </div>
 
                 <div class="" id="categories"
-                            tal:define="results python:view.get_products(currentVersion, currentSchoolsubject, currentClasslevel, sort_on, SearchableText);
+                            tal:define="results python:view.get_products(currentSchoolsubject, currentVersion, currentClasslevel, sort_on, SearchableText);
                                         Batch python:modules['Products.CMFPlone'].Batch;
 				                        b_size python:10;b_start python:0;b_start request/b_start | b_start;
                                         ">
