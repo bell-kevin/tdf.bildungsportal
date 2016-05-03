@@ -9,4 +9,10 @@
   <index name="getClasslevel" meta_type="KeywordIndex">
     <indexed_attr value="classlevel_choice" />
   </index>
+  <index name="acceptedLegalDeclaration" meta_type="FieldIndex">
+        <indexed_attr value="accept_legal_declaration" />
+  </index>
+  <index name="uploadLicense" meta_type="KeywordIndex">
+        <indexed_attr value="licenses_choice" />
+    </index>
 </object>
