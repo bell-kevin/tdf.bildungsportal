@@ -46,6 +46,7 @@ setup(
         'plone.api',
         'setuptools',
         'z3c.jbot',
+        'cioppino.twothumbs'
     ],
     extras_require={
         'test': [
