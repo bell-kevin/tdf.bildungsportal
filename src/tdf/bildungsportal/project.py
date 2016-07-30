@@ -29,19 +29,14 @@ from z3c.form import validator
 from plone.uuid.interfaces import IUUID
 from plone.dexterity.browser.view import DefaultView
 
-
-
-
-
-
 checkEmail = re.compile(
     r"[a-zA-Z0-9._%-]+@([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,4}").match
+
 
 def validateEmail(value):
     if not checkEmail(value):
         raise Invalid(_(u"Invalid email address"))
     return True
-
 
 
 def isNotEmptySchoolsubject(value):
@@ -56,7 +51,7 @@ def vocabSchoolsubjects(context):
     # For other forms edited or displayed
     from tdf.bildungsportal.center import IBCenter
     while context is not None and not IBCenter.providedBy(context):
-        #context = aq_parent(aq_inner(context))
+        # context = aq_parent(aq_inner(context))
         context = context.__parent__
 
     schoolsubjects_list = []
@@ -68,8 +63,9 @@ def vocabSchoolsubjects(context):
         terms.append(SimpleTerm(value, token=value.encode('unicode_escape'), title=value))
 
     return SimpleVocabulary(terms)
-directlyProvides(vocabSchoolsubjects, IContextSourceBinder)
 
+
+directlyProvides(vocabSchoolsubjects, IContextSourceBinder)
 
 
 def isNotEmptyClasslevel(value):
@@ -84,7 +80,7 @@ def vocabClasslevel(context):
     # For other forms edited or displayed
     from tdf.bildungsportal.center import IBCenter
     while context is not None and not IBCenter.providedBy(context):
-        #context = aq_parent(aq_inner(context))
+        # context = aq_parent(aq_inner(context))
         context = context.__parent__
 
     classlevel_list = []
@@ -96,14 +92,17 @@ def vocabClasslevel(context):
         terms.append(SimpleTerm(value, token=value.encode('unicode_escape'), title=value))
 
     return SimpleVocabulary(terms)
+
+
 directlyProvides(vocabClasslevel, IContextSourceBinder)
+
 
 def vocabAvailVersions(context):
     """ pick up licenses list from parent """
     # For other forms edited or displayed
     from tdf.bildungsportal.center import IBCenter
     while context is not None and not IBCenter.providedBy(context):
-        #context = aq_parent(aq_inner(context))
+        # context = aq_parent(aq_inner(context))
         context = context.__parent__
 
     versions_list = []
@@ -115,6 +114,8 @@ def vocabAvailVersions(context):
         terms.append(SimpleTerm(value, token=value.encode('unicode_escape'), title=value))
 
     return SimpleVocabulary(terms)
+
+
 directlyProvides(vocabAvailVersions, IContextSourceBinder)
 
 
@@ -123,7 +124,7 @@ def vocabAvailLicenses(context):
     # For other forms edited or displayed
     from tdf.bildungsportal.center import IBCenter
     while context is not None and not IBCenter.providedBy(context):
-        #context = aq_parent(aq_inner(context))
+        # context = aq_parent(aq_inner(context))
         context = context.__parent__
 
     licenses_list = []
@@ -135,8 +136,9 @@ def vocabAvailLicenses(context):
         terms.append(SimpleTerm(value, token=value.encode('unicode_escape'), title=value))
 
     return SimpleVocabulary(terms)
-directlyProvides(vocabAvailLicenses, IContextSourceBinder)
 
+
+directlyProvides(vocabAvailLicenses, IContextSourceBinder)
 
 
 @provider(IContextAwareDefaultFactory)
@@ -154,11 +156,10 @@ class AcceptLegalDeclaration(Invalid):
 
 
 class ProvideScreenshotLogo(Invalid):
-    __doc__ =  _(u"Please add a Screenshot or a Logo to your project")
+    __doc__ = _(u"Please add a Screenshot or a Logo to your project")
 
 
 class IBProject(model.Schema):
-
     dexteritytextindexer.searchable('title')
     title = schema.TextLine(
         title=_(u"Titel"),
@@ -179,15 +180,13 @@ class IBProject(model.Schema):
         required=False
     )
 
-
-
     dexteritytextindexer.searchable('schoolsubjects_choice')
     form.widget(schoolsubjects_choice=CheckBoxFieldWidget)
     schoolsubjects_choice = schema.List(
         title=_(u"Schulfach"),
         description=_(u"Bitte ein passendes Schulfach (auch mehrere Nennungen) vorgeben."),
         value_type=schema.Choice(source=vocabSchoolsubjects),
-        constraint = isNotEmptySchoolsubject,
+        constraint=isNotEmptySchoolsubject,
         required=True
     )
 
@@ -197,21 +196,21 @@ class IBProject(model.Schema):
         title=_(u"Klassenstufe"),
         description=_(u"Bitte eine passende Klassenstufe (auch mehrere Nennungen) vorgeben."),
         value_type=schema.Choice(source=vocabClasslevel),
-        constraint = isNotEmptyClasslevel,
+        constraint=isNotEmptyClasslevel,
         required=True
     )
 
-
-
-    contactAddress=schema.ASCIILine(
+    contactAddress = schema.ASCIILine(
         title=_(u"Kontakt E-Mail-Adresse"),
         description=_(u"Kontakt E-Mail-Adresse zum Projekt."),
         constraint=validateEmail
     )
 
-    homepage=schema.URI(
+    homepage = schema.URI(
         title=_(u"Homepage"),
-        description=_(u"Falls das Projekt eine externe Homepage hat, tragen Sie die URL (Beispiel: 'http://www.mysite.org') hier ein."),
+        description=_(
+            u"Falls das Projekt eine externe Homepage hat, tragen Sie die URL "
+            u"(Beispiel: 'http://www.mysite.org') hier ein."),
         required=False
     )
 
@@ -227,47 +226,42 @@ class IBProject(model.Schema):
         required=False,
     )
 
-
     form.mode(title_declaration_legal='display')
-    title_declaration_legal=schema.TextLine(
+    title_declaration_legal = schema.TextLine(
         title=_(u""),
         required=False,
-        defaultFactory = legal_declaration_title
+        defaultFactory=legal_declaration_title
     )
-
 
     form.mode(declaration_legal='display')
     declaration_legal = schema.Text(
         title=_(u""),
         required=False,
-        defaultFactory = legal_declaration_text
+        defaultFactory=legal_declaration_text
 
     )
 
-    accept_legal_declaration=schema.Bool(
+    accept_legal_declaration = schema.Bool(
         title=_(u"Akzeptieren des obigen Haftungsausschluss"),
         description=_(u"Bitte akzeptieren Sie den obigen Haftungsausschluss"),
         required=True
     )
 
     form.widget(licenses_choice=CheckBoxFieldWidget)
-    licenses_choice= schema.List(
+    licenses_choice = schema.List(
         title=_(u'Lizenz der hochgeladenen Dateien'),
         description=_(u"Bitte eine oder mehrere Lizenzen der hochgeladenen Dateien vorgeben."),
         value_type=schema.Choice(source=vocabAvailLicenses),
         required=True,
     )
 
-
-
     form.widget(compatibility_choice=CheckBoxFieldWidget)
-    compatibility_choice= schema.List(
+    compatibility_choice = schema.List(
         title=_(u"Dateien sind getestet mit folgenden LibreOffice Versionen"),
         description=_(u"Bitte markieren Sie die LibreOffice Versionen, mit denen die Dateien getestet wurden."),
         value_type=schema.Choice(source=vocabAvailVersions),
         required=True,
     )
-
 
     file = NamedBlobFile(
         title=_(u"Erste hochzuladende Datei"),
@@ -275,20 +269,20 @@ class IBProject(model.Schema):
         required=True,
     )
 
-
-
     form.mode(information_further_file_uploads='display')
     model.primary('information_further_file_uploads')
     information_further_file_uploads = RichText(
-        title = _(u"Weitere Felder zum Hochladen von Projekt-Dateien"),
-        description = _(u"Falls Sie weitere Projekt-Dateien hochladen wollen, finden Sie entsprechende Felder auf dem Register 'Weitere Dateien'."),
-        required = False
-     )
+        title=_(u"Weitere Felder zum Hochladen von Projekt-Dateien"),
+        description=_(
+            u"Falls Sie weitere Projekt-Dateien hochladen wollen, finden Sie entsprechende Felder auf "
+            u"dem Register 'Weitere Dateien'."),
+        required=False
+    )
 
     form.fieldset('fileset1',
-        label=u"Weitere Dateien",
-        fields=['file1', 'file2', 'file3', 'file4']
-    )
+                  label=u"Weitere Dateien",
+                  fields=['file1', 'file2', 'file3', 'file4']
+                  )
 
     file1 = NamedBlobFile(
         title=_(u"Zweite hochzuladende Datei"),
@@ -296,20 +290,17 @@ class IBProject(model.Schema):
         required=False,
     )
 
-
     file2 = NamedBlobFile(
         title=_(u"Dritte hochzuladende Datei"),
         description=_(u"Bitte laden Sie Ihre Datei hoch."),
         required=False,
     )
 
-
     file3 = NamedBlobFile(
         title=_(u"Vierte hochzuladende Datei"),
         description=_(u"Bitte laden Sie Ihre Datei hoch."),
         required=False,
     )
-
 
     file4 = NamedBlobFile(
         title=_(u"Fuenfte hochzuladende Datei"),
@@ -320,9 +311,7 @@ class IBProject(model.Schema):
     @invariant
     def legaldeclarationaccepted(data):
         if data.accept_legal_declaration is not True:
-           raise AcceptLegalDeclaration(_(u"Bitte akzeptieren Sie den Haftungsausschluss zum Hochladen Ihrer Dateien"))
-
-
+            raise AcceptLegalDeclaration(_(u"Bitte akzeptieren Sie den Haftungsausschluss zum Hochladen Ihrer Dateien"))
 
     @invariant
     def missingScreenshotOrLogo(data):
@@ -330,10 +319,8 @@ class IBProject(model.Schema):
             raise ProvideScreenshotLogo(_(u'Please add a Screenshot or a Logo to your project page'))
 
 
-
 class ValidateBProjectUniqueness(validator.SimpleFieldValidator):
-    #Validate site-wide uniqueness of project titles.
-
+    # Validate site-wide uniqueness of project titles.
 
     def validate(self, value):
         # Perform the standard validation first
@@ -349,15 +336,13 @@ class ValidateBProjectUniqueness(validator.SimpleFieldValidator):
                 if result.UID != contextUUID:
                     raise Invalid(_(u"The project title is already in use"))
 
+
 validator.WidgetValidatorDiscriminators(
     ValidateBProjectUniqueness,
     field=IBProject['title'],
 )
 
 
-
-
 class BProjectView(DefaultView):
-
     def releaseDate(self):
         return self.context.toLocalizedTime()
