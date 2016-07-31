@@ -41,7 +41,7 @@ def validateEmail(value):
 
 def isNotEmptySchoolsubject(value):
     if not value:
-        raise Invalid(u'Bitte zumindest ein Schulfach vorgeben.')
+        raise Invalid(u'Please choose at least one school subject.')
     return True
 
 
@@ -70,7 +70,7 @@ directlyProvides(vocabSchoolsubjects, IContextSourceBinder)
 
 def isNotEmptyClasslevel(value):
     if not value:
-        raise Invalid(u'Bitte zumindest eine Klassenstufe vorgeben.')
+        raise Invalid(u'Please choose at least one class level.')
     return True
 
 
@@ -152,7 +152,7 @@ def legal_declaration_text(context):
 
 
 class AcceptLegalDeclaration(Invalid):
-    __doc__ = _(u"Bitte akzeptieren Sie den Haftungsausschluss")
+    __doc__ = _(u"It is necessary that you accept the Legal Declaration")
 
 
 class ProvideScreenshotLogo(Invalid):
@@ -163,28 +163,28 @@ class IBProject(model.Schema):
     dexteritytextindexer.searchable('title')
     title = schema.TextLine(
         title=_(u"Titel"),
-        description=_(u"Projekt Titel - Minimum 5 und Maximum 50 Zeichen"),
+        description=_(u"Project Title - minimum 5 and maximum 50 characters"),
         min_length=5,
         max_length=50
     )
 
     dexteritytextindexer.searchable('description')
     description = schema.Text(
-        title=_(u"Projekt Kurzbeschreibung"),
+        title=_(u"Project Summary"),
     )
 
     dexteritytextindexer.searchable('details')
     form.primary('details')
     details = RichText(
-        title=_(u"Projekt-Beschreibung"),
+        title=_(u"Full Project Description"),
         required=False
     )
 
     dexteritytextindexer.searchable('schoolsubjects_choice')
     form.widget(schoolsubjects_choice=CheckBoxFieldWidget)
     schoolsubjects_choice = schema.List(
-        title=_(u"Schulfach"),
-        description=_(u"Bitte ein passendes Schulfach (auch mehrere Nennungen) vorgeben."),
+        title=_(u"School Subject"),
+        description=_(u"Please choose an appropriate school subject (multiple selections possible)."),
         value_type=schema.Choice(source=vocabSchoolsubjects),
         constraint=isNotEmptySchoolsubject,
         required=True
@@ -193,36 +193,35 @@ class IBProject(model.Schema):
     dexteritytextindexer.searchable('classlevel_choice')
     form.widget(classlevel_choice=CheckBoxFieldWidget)
     classlevel_choice = schema.List(
-        title=_(u"Klassenstufe"),
-        description=_(u"Bitte eine passende Klassenstufe (auch mehrere Nennungen) vorgeben."),
+        title=_(u"Class Level"),
+        description=_(u"Please choose an appropriate class level (multiple selections possible)."),
         value_type=schema.Choice(source=vocabClasslevel),
         constraint=isNotEmptyClasslevel,
         required=True
     )
 
     contactAddress = schema.ASCIILine(
-        title=_(u"Kontakt E-Mail-Adresse"),
-        description=_(u"Kontakt E-Mail-Adresse zum Projekt."),
+        title=_(u"Contact email-address"),
+        description=_(u"Contact email-address for the project."),
         constraint=validateEmail
     )
 
     homepage = schema.URI(
         title=_(u"Homepage"),
         description=_(
-            u"Falls das Projekt eine externe Homepage hat, tragen Sie die URL "
-            u"(Beispiel: 'http://www.mysite.org') hier ein."),
+            u"If the project has an external home page, enter its URL (example: 'http://www.mysite.org')."),
         required=False
     )
 
     project_logo = NamedBlobImage(
         title=_(u"Logo"),
-        description=_(u"Verwenden Sie den Durchsuchen-Knopf, um das Projekt-Logo auszusuchen."),
+        description=_(u"Add a logo for the project (or organization/company) by clicking the 'Browse' button."),
         required=False,
     )
 
     screenshot = NamedBlobImage(
-        title=_(u"Bildschirmfoto des Projekts"),
-        description=_(u"Verwenden Sie den Durchsuchen-Knopt, um die Datei mit einem Bildschirmfoto auszusuchen."),
+        title=_(u"Screemshot of the Project"),
+        description=_(u"Add a screenshot by clicking the 'Browse' button."),
         required=False,
     )
 
@@ -242,76 +241,77 @@ class IBProject(model.Schema):
     )
 
     accept_legal_declaration = schema.Bool(
-        title=_(u"Akzeptieren des obigen Haftungsausschluss"),
-        description=_(u"Bitte akzeptieren Sie den obigen Haftungsausschluss"),
+        title=_(u"Accept the above legal disclaimer"),
+        description=_(u"Please declare that you accept the above legal disclaimer"),
         required=True
     )
 
     form.widget(licenses_choice=CheckBoxFieldWidget)
     licenses_choice = schema.List(
-        title=_(u'Lizenz der hochgeladenen Dateien'),
-        description=_(u"Bitte eine oder mehrere Lizenzen der hochgeladenen Dateien vorgeben."),
+        title=_(u'License of the uploaded files'),
+        description=_(u"Please mark one or more licenses you publish your files"),
         value_type=schema.Choice(source=vocabAvailLicenses),
         required=True,
     )
 
     form.widget(compatibility_choice=CheckBoxFieldWidget)
     compatibility_choice = schema.List(
-        title=_(u"Dateien sind getestet mit folgenden LibreOffice Versionen"),
-        description=_(u"Bitte markieren Sie die LibreOffice Versionen, mit denen die Dateien getestet wurden."),
+        title=_(u"Compatible with versions of LibreOffice"),
+        description=_(u"Please mark one or more program versions with which this files are compatible with."),
         value_type=schema.Choice(source=vocabAvailVersions),
         required=True,
     )
 
     file = NamedBlobFile(
-        title=_(u"Erste hochzuladende Datei"),
-        description=_(u"Bitte laden Sie Ihre Datei hoch."),
+        title=_(u"The first file you want to upload"),
+        description=_(u"Please upload your file."),
         required=True,
     )
 
     form.mode(information_further_file_uploads='display')
     model.primary('information_further_file_uploads')
     information_further_file_uploads = RichText(
-        title=_(u"Weitere Felder zum Hochladen von Projekt-Dateien"),
+        title=_(u"Further Fields for File uploads to this project"),
         description=_(
-            u"Falls Sie weitere Projekt-Dateien hochladen wollen, finden Sie entsprechende Felder auf "
-            u"dem Register 'Weitere Dateien'."),
+            u"If you want to upload further project files, you find the appropriate fields on the "
+            u"register 'Further Files'."),
         required=False
     )
 
     form.fieldset('fileset1',
-                  label=u"Weitere Dateien",
+                  label=u"Further Files",
                   fields=['file1', 'file2', 'file3', 'file4']
                   )
 
     file1 = NamedBlobFile(
-        title=_(u"Zweite hochzuladende Datei"),
-        description=_(u"Bitte laden Sie Ihre Datei hoch."),
+        title=_(u"The second file you want to upload"),
+        description=_(u"Please upload your file."),
         required=False,
     )
 
     file2 = NamedBlobFile(
-        title=_(u"Dritte hochzuladende Datei"),
-        description=_(u"Bitte laden Sie Ihre Datei hoch."),
+        title=_(u"The third file you want to upload"),
+        description=_(u"Please upload your file"),
         required=False,
     )
 
     file3 = NamedBlobFile(
-        title=_(u"Vierte hochzuladende Datei"),
-        description=_(u"Bitte laden Sie Ihre Datei hoch."),
+        title=_(u"The fourth file you want to upload"),
+        description=_(u"Please upload your file."),
         required=False,
     )
 
     file4 = NamedBlobFile(
-        title=_(u"Fuenfte hochzuladende Datei"),
-        description=_(u"Bitte laden Sie Ihre Datei hoch."),
+        title=_(u"The fifth file you want to upload"),
+        description=_(u"Please upload your file."),
         required=False,
     )
 
     @invariant
     def legaldeclarationaccepted(data):
         if data.accept_legal_declaration is not True:
-            raise AcceptLegalDeclaration(_(u"Bitte akzeptieren Sie den Haftungsausschluss zum Hochladen Ihrer Dateien"))
+            raise AcceptLegalDeclaration(_(u"Please accept the Legal Declaration about "
+                                           u"the files you'll upload"))
 
     @invariant
     def missingScreenshotOrLogo(data):
