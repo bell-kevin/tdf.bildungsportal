@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2016-07-31 16:18+0000\n"
+"POT-Creation-Date: 2016-07-31 20:55+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -53,7 +53,7 @@ msgstr ""
 msgid "All School Subjects"
 msgstr ""
 
-#: ./center.py:52
+#: ./center.py:53
 #: ./project.py:196
 msgid "Class Level"
 msgstr ""
@@ -74,27 +74,27 @@ msgstr ""
 msgid "Description of the educational portal"
 msgstr ""
 
-#: ./center.py:99
+#: ./center.py:101
 msgid "EMail address for the messages about new releases"
 msgstr ""
 
-#: ./center.py:100
+#: ./center.py:102
 msgid "Enter a email address to which information about a new release should be send"
 msgstr ""
 
-#: ./center.py:92
+#: ./center.py:94
 msgid "Enter any legal disclaimer and limitations for downloads that should appear on each page for dowloadable files."
 msgstr ""
 
-#: ./center.py:76
+#: ./center.py:78
 msgid "Enter the text of the legal disclaimer and limitations that should be displayed to the project creator and should be accepted by the owner of the project."
 msgstr ""
 
-#: ./center.py:79
+#: ./center.py:81
 msgid "Fill in the legal disclaimer, that had to be accepted by the project owner"
 msgstr ""
 
-#: ./center.py:94
+#: ./center.py:96
 msgid "Fill in the text for the legal download disclaimer"
 msgstr ""
 
@@ -134,11 +134,11 @@ msgstr ""
 msgid "It is necessary that you accept the Legal Declaration"
 msgstr ""
 
-#: ./center.py:70
+#: ./center.py:72
 msgid "Legal Disclaimer And Limitations"
 msgstr ""
 
-#: ./center.py:85
+#: ./center.py:87
 msgid "Legal Disclaimer and Limitations for Downloads"
 msgstr ""
 
@@ -262,11 +262,11 @@ msgstr ""
 msgid "Sort On"
 msgstr ""
 
-#: ./center.py:75
+#: ./center.py:77
 msgid "Text of the Legal Disclaimer and Limitations"
 msgstr ""
 
-#: ./center.py:91
+#: ./center.py:93
 msgid "Text of the Legal Disclaimer and Limitations for Downlaods"
 msgstr ""
 
@@ -298,11 +298,11 @@ msgstr ""
 msgid "Title"
 msgstr ""
 
-#: ./center.py:69
+#: ./center.py:71
 msgid "Title for Legal Disclaimer and Limitations"
 msgstr ""
 
-#: ./center.py:84
+#: ./center.py:86
 msgid "Title of the Legal Disclaimer and Limitations for Downloads"
 msgstr ""
 
@@ -328,7 +328,7 @@ msgstr ""
 msgid "label_any_classlevel"
 msgstr ""
 
-#. Default: "Every Version"
+#. Default: "Every LibreOffice Version"
 #: ./center_templates/view.pt:153
 msgid "label_any_version"
 msgstr ""
