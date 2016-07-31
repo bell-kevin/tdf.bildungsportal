@@ -34,7 +34,7 @@
     <h1 i18n:translate=""> <span i18n:name="portal_title" tal:content="context/title"  /></h1>
 
     <div id="most_recent">
-        <h2 i18n:translate="most_recent_projects">Neueste Projekte</h2>
+        <h2 i18n:translate="most_recent_projects">Most Recent Projects</h2>
         <div class=""
                     tal:define="results python:view.get_latest_projects();
                                 Batch python:modules['Products.CMFPlone'].Batch;
@@ -55,7 +55,7 @@
 
                               <h3 style="border-top: none">
                                            <a href="" tal:attributes="href projectURL;" 	tal:content="project/pretty_title_or_id">
-								           <tal:comment replace="nothing">Erstes Projekt</tal:comment></a>
+								           <tal:comment replace="nothing">First Project</tal:comment></a>
                                        </h3>
 						  </tal:entry>
                         </li>
@@ -66,7 +66,7 @@
     </div>
 
     <div id="most_recent">
-        <h2 i18n:translate="most_popular_projects">Best bewertete Projekte</h2>
+        <h2 i18n:translate="most_popular_projects">Most Popular</h2>
         <div class=""
                     tal:define="results python:view.get_most_popular_projects();
                                 Batch python:modules['Products.CMFPlone'].Batch;
@@ -87,7 +87,7 @@
 
                               <h3 style="border-top: none">
                                            <a href="" tal:attributes="href projectURL;" 	tal:content="project/pretty_title_or_id">
-								           <tal:comment replace="nothing">Erstes Projekt</tal:comment></a>
+								           <tal:comment replace="nothing">First Project</tal:comment></a>
                                        </h3>
 						  </tal:entry>
                         </li>
@@ -99,7 +99,7 @@
 
     <div id="by-schoolsubject">
 
-        <h2 i18n:translate="">Suche nach Schulfaechern</h2>
+        <h2 i18n:translate="">Search For Class Level</h2>
 
 
         <ol id="project-schoolsubjects">
@@ -107,7 +107,7 @@
                 <li><a href=""
                         tal:attributes="href string:${context/absolute_url}?getSchoolsubject=${schoolsubject}&getCompatibility=any&getClasslevel=any"
                         tal:content="schoolsubject">
-                        <tal:comment replace="nothing">Schulfach</tal:comment>
+                        <tal:comment replace="nothing">School subject</tal:comment>
                         </a>
                 </li>
             </tal:schoolsubjects>
@@ -117,7 +117,7 @@
 
     <div id="by-classlevel">
 
-        <h2 i18n:translate="">Suche nach Klassenstufen</h2>
+        <h2 i18n:translate="">Search for Class Level</h2>
 
 
         <ol id="project-classlevel">
@@ -125,7 +125,7 @@
                 <li><a href=""
                         tal:attributes="href string:${context/absolute_url}?getClasslevel=${classlevel}&getCompatibility=any&getSchoolsubject=any"
                         tal:content="classlevel">
-                        <tal:comment replace="nothing">Klassenstufe</tal:comment>
+                        <tal:comment replace="nothing">Class Level</tal:comment>
                         </a>
                 </li>
             </tal:classlevel>
@@ -133,13 +133,13 @@
     </div>
 
             <div class="panbildung">
-                <h2>Suche nach Bildungsprojekten</h2>
+                <h2>Search for Educational Projects</h2>
                 <div id="sort-by">
                     <form id="product_select" style="margin-bottom: 1em" tal:attributes="action string:${context/absolute_url}">
                         <label class="hiddenStructure" i18n:translate="">Show</label>
 
                         <select name="getSchoolsubject" onchange="this.form.submit()">
-                            <option value="" i18n:translate="">Alle Schulfaecher</option>
+                            <option value="" i18n:translate="">All School Subjects</option>
                             <tal:block tal:repeat="schoolsubject context/available_schoolsubjects">
                                     <option tal:content="schoolsubject" tal:attributes="value schoolsubject; selected python:(currentSchoolsubject==schoolsubject, 'selected', nothing)" />
                                 </tal:block>
@@ -151,7 +151,7 @@
                                         tal:attributes="value version; selected python: (currentVersion==version, 'selected', nothing)" />
                             </tal:block>
                             <option value="any" tal:attributes="selected python: (currentVersion in ['', 'any'],'selected',nothing)"
-                                          i18n:translate="label_any_version"> Jede Version</option>
+                                          i18n:translate="label_any_version">Every Version</option>
                         </select>
 
                         <select name="getClasslevel" onchange="this.form.submit()">
@@ -160,7 +160,7 @@
                                         tal:attributes="value classlevel; selected python: (currentClasslevel==classlevel, 'selected', nothing)" />
                             </tal:block>
                             <option value="any" tal:attributes="selected python: (currentClasslevel in ['', 'any'], 'selected', nothing)"
-                                        i18n:translate="label_any_classlevel">Jede Klassenstufe</option>
+                                        i18n:translate="label_any_classlevel">Every Class Level</option>
                         </select>
 
                         <label for="project-sort" i18n:translate="">Sort On</label>
@@ -202,7 +202,7 @@
                                          <a href=""
                                                  tal:attributes="href projectURL;"
                                                  tal:content="project/pretty_title_or_id">
-                                             <tal:comment replace="nothing">Erstes Bildungsprojekt</tal:comment>
+                                             <tal:comment replace="nothing">First Educational Project</tal:comment>
                                          </a>
                                      </h3>
                                      <div tal:content="structure project/@@rate-if-you-dare"/>
@@ -228,7 +228,7 @@
 
 								<span i18n:translate="">in</span>
                             <span tal:replace="python:', '.join(result.getObject().schoolsubjects_choice)"></span>
-                                <span i18n:translate="">für</span>
+                                <span i18n:translate="">for</span>
                                 <span tal:replace="python:', '.join(result.getObject().classlevel_choice)"></span>
                             </span>
 							<p class="product-description"
