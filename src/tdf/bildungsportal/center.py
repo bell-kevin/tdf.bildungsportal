@@ -61,7 +61,7 @@ class IBCenter(model.Schema):
                                                 'Jahrgangsstufe 8',
                                                 'Jahrgangsstufe 9',
                                                 'Jahrgangsstufe 10 - Sek-I',
-                                                'Jahrgangsstufe 10 - Sek-II'
+                                                'Jahrgangsstufe 10 - Sek-II',
                                                 'Jahrgangsstufe 11',
                                                 'Jahrgangsstufe 12',
                                                 'Jahrgangsstufe 13'],
