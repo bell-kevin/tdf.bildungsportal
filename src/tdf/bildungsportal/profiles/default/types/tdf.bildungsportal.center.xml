@@ -3,8 +3,8 @@
         i18n:domain="tdf.bildungsportal" xmlns:i18n="http://xml.zope.org/namespaces/i18n">
 
     <!-- Basic metadata -->
-    <property name="title" i18n:translate="">LibreOffice Bildungsportal</property>
-    <property name="description" i18n:translate="">Ein LibreOffice Bildungsportal</property>
+    <property name="title" i18n:translate="">LibreOffice Educational Portal</property>
+    <property name="description" i18n:translate="">A LibreOffice Educational Portal</property>
 
     <property name="allow_discussion">True</property>
     <property name="global_allow">True</property>
