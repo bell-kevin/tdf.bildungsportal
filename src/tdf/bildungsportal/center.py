@@ -13,14 +13,14 @@ from plone.app.multilingual.dx import directives
 
 class IBCenter(model.Schema):
     title = schema.TextLine(
-        title=_(u"Name des Bildungsportals"),
+        title=_(u"Name of the educational portal"),
     )
 
     description = schema.Text(
-        description=_(u"Beschreibung des Bildungsportals"),
+        description=_(u"Description of the educational portal"),
     )
 
-    available_schoolsubjects = schema.List(title=_(u"Schulfach"),
+    available_schoolsubjects = schema.List(title=_(u"Scool Subjects"),
                                            default=['Deutsch',
                                                     'Englisch',
                                                     'Erdkunde',
@@ -30,12 +30,12 @@ class IBCenter(model.Schema):
                                                     ],
                                            value_type=schema.TextLine())
 
-    available_licenses = schema.List(title=_(u"Lizenzen"),
+    available_licenses = schema.List(title=_(u"Licenses"),
                                      default=['CC-by-sa-v3 (Creative Commons Attribution-ShareAlike 3.0)',
                                               'CC-by-sa-v4 (Creative Commons Attribution-ShareAlike 4.0)', ],
                                      value_type=schema.TextLine())
 
-    available_versions = schema.List(title=_(u"LibreOffice Versionen"),
+    available_versions = schema.List(title=_(u"LibreOffice Versions"),
                                      default=['LibreOffice 3.3',
                                               'LibreOffice 3.4',
                                               'LibreOffice 3.5',
@@ -49,7 +49,7 @@ class IBCenter(model.Schema):
                                               'LibreOffice 5.1'],
                                      value_type=schema.TextLine())
 
-    available_classlevel = schema.List(title=_(u"Klassenstufen"),
+    available_classlevel = schema.List(title=_(u"Class Level"),
                                        default=['Klassenstufe 1',
                                                 'Klassenstufe 2',
                                                 'Klassenstufe 3',
@@ -66,33 +66,32 @@ class IBCenter(model.Schema):
                                        value_type=schema.TextLine())
 
     title_legaldisclaimer = schema.TextLine(
-        title=_(u"Titel Haftungsausschluss und -begrenzung"),
-        default=_(u"Haftungsausschluss und -begrenzung"),
+        title=_(u"Title for Legal Disclaimer and Limitations"),
+        default=_(u"Legal Disclaimer And Limitations"),
         required=False
     )
 
     legal_disclaimer = schema.Text(
-        title=_(u"Text von Haftungsausschluss und Begrenzung"),
+        title=_(u"Text of the Legal Disclaimer and Limitations"),
         description=_(
-            u"Bitte den Text von Haftungsausschluss und -begrenzung eintragen, der vom "
-            u"Ersteller eines Projektes akzeptiert werden musss."),
+            u"Enter the text of the legal disclaimer and limitations that should be displayed "
+            u"to the project creator and should be accepted by the owner of the project."),
         default=_(u"Fill in the legal disclaimer, that had to be accepted by the project owner"),
         required=False
     )
 
     title_legaldownloaddisclaimer = schema.TextLine(
-        title=_(u"Titel Hauftungsausschluss und -begrenzung zu Downloads"),
-        default=_(u"Hauftungsausschluss und -begrenzung zu Downloads"),
+        title=_(u"Title of the Legal Disclaimer and Limitations for Downloads"),
+        default=_(u"Legal Disclaimer and Limitations for Downloads"),
         required=False
     )
 
     form.primary('legal_downloaddisclaimer')
     legal_downloaddisclaimer = RichText(
-        title=_(u"Text von Haftungsausschluss und -begrenzung zu Downloads"),
-        description=_(
-            u"Bitte den Text von Haftungsausschluss und -begrenzung zu Downloads hier eintragen, "
-            u"der auf jeder Projektseite bei den Downloads angezeigt wird."),
-        default=_(u"Bitte den Text zu Haftungsausschluss und -begrenzung bei Downloads hier eintragen."),
+        title=_(u"Text of the Legal Disclaimer and Limitations for Downlaods"),
+        description=_(u"Enter any legal disclaimer and limitations for downloads that should "
+                      u"appear on each page for dowloadable files."),
+        default=_(u"Fill in the text for the legal download disclaimer"),
         required=False
     )
 
