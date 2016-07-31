@@ -319,6 +319,20 @@ class IBProject(model.Schema):
             raise ProvideScreenshotLogo(_(u'Please add a Screenshot or a Logo to your project page'))
 
 
+    @invariant
+    def licensenotchoosen(value):
+        if not value.licenses_choice:
+            raise Invalid(_(u"Please choose a license for your release."))
+
+
+    @invariant
+    def compatibilitynotchoosen(data):
+        if not data.compatibility_choice:
+            raise Invalid(_(u"Please choose one or more compatible product versions for your release"))
+
+
+
+
 class ValidateBProjectUniqueness(validator.SimpleFieldValidator):
     # Validate site-wide uniqueness of project titles.
 
