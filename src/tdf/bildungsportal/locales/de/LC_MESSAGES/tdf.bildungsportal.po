@@ -288,7 +288,7 @@ msgid "The third file you want to upload"
 msgstr "Die dritte Datei, die Sie hochladen wollen"
 
 #: ./project.py:165
-msgid "Titel"
+msgid "Title"
 msgstr "Titel"
 
 #: ./center.py:69
