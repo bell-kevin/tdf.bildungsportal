@@ -37,13 +37,13 @@
                     <h1 class="documentFirstHeading"><span tal:content="context/title" /></h1>
                     <div tal:content="structure context/@@rate-if-you-dare" />
                     <p class="documentDescription"><span tal:content="context/description" /></p>
-                    <h2 class="documentSecondHeading">Projekt-Beschreibung</h2>
+                    <h2 class="documentSecondHeading">Project Description</h2>
                     <p class="documentDescription" tal:content="structure view/w/details/render" />
-                    <h3>Schulfach/Schulfaecher</h3>
+                    <h3>School Subject(s)</h3>
                     <div tal:content="structure view/w/schoolsubjects_choice/render" />
-                    <h3>Klassenstufe/Klassenstufen</h3>
+                    <h3>Class Level(s)</h3>
                     <div tal:content="structure view/w/classlevel_choice/render" />
-                    <h3 tal:condition="context/homepage">Homepage des Projekts</h3>
+                    <h3 tal:condition="context/homepage">Homepage Of The Project</h3>
                     <div tal:content="context/homepage" />
                      <h3>Lizenz</h3>
                          <div tal:content="structure view/w/licenses_choice/render" />
