@@ -151,7 +151,7 @@
                                         tal:attributes="value version; selected python: (currentVersion==version, 'selected', nothing)" />
                             </tal:block>
                             <option value="any" tal:attributes="selected python: (currentVersion in ['', 'any'],'selected',nothing)"
-                                          i18n:translate="label_any_version">Every Version</option>
+                                          i18n:translate="label_any_version">Every LibreOffice Version</option>
                         </select>
 
                         <select name="getClasslevel" onchange="this.form.submit()">
