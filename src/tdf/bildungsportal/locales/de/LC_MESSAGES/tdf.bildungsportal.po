@@ -46,10 +46,10 @@ msgstr "Fügen Sie ein Bildschirmfoto durch Klicken auf die Schaltfläche hinzu.
 msgid "All School Subjects"
 msgstr "Alle Schullfächer"
 
-#: ./center.py:52
+#: ./center.py:53
 #: ./project.py:196
 msgid "Class Level"
-msgstr "Klassenstufe"
+msgstr "Jahrgangsstufe"
 
 #: ./project.py:259
 msgid "Compatible with versions of LibreOffice"
@@ -67,27 +67,27 @@ msgstr "Kontakt-Email-Adresse für das Projekt."
 msgid "Description of the educational portal"
 msgstr "Beschreibung des Bildungsportals"
 
-#: ./center.py:99
+#: ./center.py:101
 msgid "EMail address for the messages about new releases"
 msgstr "EMail-Adresse für Meldungen über neue Releases"
 
-#: ./center.py:100
+#: ./center.py:102
 msgid "Enter a email address to which information about a new release should be send"
 msgstr "Fügen Sie eine Email-Adresse ein, an die Informationen über neue Releases geschickt werden sollen"
 
-#: ./center.py:92
+#: ./center.py:94
 msgid "Enter any legal disclaimer and limitations for downloads that should appear on each page for dowloadable files."
 msgstr "Fügen Sie jedweden Haftungsausschluss und -begrenzung für Downloads ein, der auf jeder Seite für herunterladbare Dateien erscheinen soll"
 
-#: ./center.py:76
+#: ./center.py:78
 msgid "Enter the text of the legal disclaimer and limitations that should be displayed to the project creator and should be accepted by the owner of the project."
 msgstr "Fügen Sie den Text für den Haftungsausschluss und -begrenzung ein, der den Projekterstellern angezeigt und von diesen akzeptiert werden muss."
 
-#: ./center.py:79
+#: ./center.py:81
 msgid "Fill in the legal disclaimer, that had to be accepted by the project owner"
 msgstr "Tragen sie den Haftungsauschluss ein den die Projektersteller akzeptieren müssen"
 
-#: ./center.py:94
+#: ./center.py:96
 msgid "Fill in the text for the legal download disclaimer"
 msgstr "Füllen Sie den Text für den Download-Haftungsausschluss ein"
 
@@ -127,11 +127,11 @@ msgstr "Ungültige Email-Adresse"
 msgid "It is necessary that you accept the Legal Declaration"
 msgstr "Es ist erforderlich, dass Sie den Haftungsausschluss akzeptieren"
 
-#: ./center.py:70
+#: ./center.py:72
 msgid "Legal Disclaimer And Limitations"
 msgstr "Haftungsausschluss und -begrenzung"
 
-#: ./center.py:85
+#: ./center.py:87
 msgid "Legal Disclaimer and Limitations for Downloads"
 msgstr "Haftungsausschluss und -begrenzung für Downloads"
 
@@ -181,7 +181,7 @@ msgstr "Bitte wählen Sie eine Lizenz für Ihr Release"
 
 #: ./project.py:197
 msgid "Please choose an appropriate class level (multiple selections possible)."
-msgstr "Bitte wählen Sie eine passende Klassenstufe (Mehrfachwahl möglich)."
+msgstr "Bitte wählen Sie eine passende Jahrgangsstufe (Mehrfachwahl möglich)."
 
 #: ./project.py:187
 msgid "Please choose an appropriate school subject (multiple selections possible)."
@@ -241,11 +241,11 @@ msgstr "Suchen"
 
 #: ./center_templates/view.pt:102
 msgid "Search For Class Level"
-msgstr "Suche nach Klassenstufen"
+msgstr "Suche nach Jahrgangsstufen"
 
 #: ./center_templates/view.pt:120
 msgid "Search for Class Level"
-msgstr "Suche nach Klassenstufen"
+msgstr "Suche nach Jahrgangsstufen"
 
 #: ./center_templates/view.pt:139
 msgid "Show"
@@ -255,11 +255,11 @@ msgstr "Anzeigen"
 msgid "Sort On"
 msgstr "Sortieren nach"
 
-#: ./center.py:75
+#: ./center.py:77
 msgid "Text of the Legal Disclaimer and Limitations"
 msgstr "Text von Haftungsausschluss und -begrenzung"
 
-#: ./center.py:91
+#: ./center.py:93
 msgid "Text of the Legal Disclaimer and Limitations for Downlaods"
 msgstr "Text von Haftungsausschluss und -begrenzung für Downloads"
 
@@ -291,11 +291,11 @@ msgstr "Die dritte Datei, die Sie hochladen wollen"
 msgid "Title"
 msgstr "Titel"
 
-#: ./center.py:69
+#: ./center.py:71
 msgid "Title for Legal Disclaimer and Limitations"
 msgstr "Titel von Haftungsausschluss und -begrenzung"
 
-#: ./center.py:84
+#: ./center.py:86
 msgid "Title of the Legal Disclaimer and Limitations for Downloads"
 msgstr "Titel von Haftungsausschluss und -begrenzung für Downloads"
 
@@ -321,7 +321,7 @@ msgstr "in"
 msgid "label_any_classlevel"
 msgstr ""
 
-#. Default: "Every Version"
+#. Default: "Every LibreOffice Version"
 #: ./center_templates/view.pt:153
 msgid "label_any_version"
 msgstr ""
