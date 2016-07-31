@@ -16,292 +16,292 @@ msgstr ""
 
 #: ./center_templates/view.pt:34
 msgid "${portal_title}"
-msgstr ""
+msgstr "${portal_title}"
 
 #: ./center_templates/view.pt:188
 msgid "${results_eupprojects} projects matching your criteria."
-msgstr ""
+msgstr "${results_eupprojects} Projekte passen auf Ihre Kriterien."
 
 #: ./profiles/default/types/tdf.bildungsportal.center.xml
 msgid "A LibreOffice Educational Portal"
-msgstr ""
+msgstr "Ein LibreOffice-Bildungsportal"
 
 #: ./profiles/default/types/tdf.bildungsportal.project.xml
 msgid "A Project"
-msgstr ""
+msgstr "Ein Projekt"
 
 #: ./project.py:244
 msgid "Accept the above legal disclaimer"
-msgstr ""
+msgstr "Akzeptieren des obigen Haftungsausschlusses"
 
 #: ./project.py:218
 msgid "Add a logo for the project (or organization/company) by clicking the 'Browse' button."
-msgstr ""
+msgstr "Fügen Sie ein Logo für dieses Projekt (oder Organisation/Unternehmen) durch Klicken auf die Schaltfläche hinzu."
 
 #: ./project.py:224
 msgid "Add a screenshot by clicking the 'Browse' button."
-msgstr ""
+msgstr "Fügen Sie ein Bildschirmfoto durch Klicken auf die Schaltfläche hinzu."
 
 #: ./center_templates/view.pt:142
 msgid "All School Subjects"
-msgstr ""
+msgstr "Alle Schullfächer"
 
 #: ./center.py:52
 #: ./project.py:196
 msgid "Class Level"
-msgstr ""
+msgstr "Klassenstufe"
 
 #: ./project.py:259
 msgid "Compatible with versions of LibreOffice"
-msgstr ""
+msgstr "Getestet mit den LibreOffice-Versionen"
 
 #: ./project.py:204
 msgid "Contact email-address"
-msgstr ""
+msgstr "Kontakt-Email-Adresse"
 
 #: ./project.py:205
 msgid "Contact email-address for the project."
-msgstr ""
+msgstr "Kontakt-Email-Adresse für das Projekt."
 
 #: ./center.py:20
 msgid "Description of the educational portal"
-msgstr ""
+msgstr "Beschreibung des Bildungsportals"
 
 #: ./center.py:99
 msgid "EMail address for the messages about new releases"
-msgstr ""
+msgstr "EMail-Adresse für Meldungen über neue Releases"
 
 #: ./center.py:100
 msgid "Enter a email address to which information about a new release should be send"
-msgstr ""
+msgstr "Fügen Sie eine Email-Adresse ein, an die Informationen über neue Releases geschickt werden sollen"
 
 #: ./center.py:92
 msgid "Enter any legal disclaimer and limitations for downloads that should appear on each page for dowloadable files."
-msgstr ""
+msgstr "Fügen Sie jedweden Haftungsausschluss und -begrenzung für Downloads ein, der auf jeder Seite für herunterladbare Dateien erscheinen soll"
 
 #: ./center.py:76
 msgid "Enter the text of the legal disclaimer and limitations that should be displayed to the project creator and should be accepted by the owner of the project."
-msgstr ""
+msgstr "Fügen Sie den Text für den Haftungsausschluss und -begrenzung ein, der den Projekterstellern angezeigt und von diesen akzeptiert werden muss."
 
 #: ./center.py:79
 msgid "Fill in the legal disclaimer, that had to be accepted by the project owner"
-msgstr ""
+msgstr "Tragen sie den Haftungsauschluss ein den die Projektersteller akzeptieren müssen"
 
 #: ./center.py:94
 msgid "Fill in the text for the legal download disclaimer"
-msgstr ""
+msgstr "Füllen Sie den Text für den Download-Haftungsausschluss ein"
 
 #: ./project.py:179
 msgid "Full Project Description"
-msgstr ""
+msgstr "Vollständige Projektbeschreibung"
 
 #: ./project.py:274
 msgid "Further Fields for File uploads to this project"
-msgstr ""
+msgstr "Weitere Felder für das Hochladen von Projekt-Dateien"
 
 #: ./center_templates/view.pt:168
 msgid "Highest Rated"
-msgstr ""
+msgstr "Am besten bewertet"
 
 #: ./project.py:210
 msgid "Homepage"
-msgstr ""
+msgstr "Homepage"
 
 #: ./project.py:211
 msgid "If the project has an external home page, enter its URL (example: 'http://www.mysite.org')."
-msgstr ""
+msgstr "Falls das Projekt eine externe Homepage hat, tragen Sie die URL (Beispiel: 'http://www.mysite.org') hier ein."
 
 #: ./project.py:275
 msgid "If you want to upload further project files, you find the appropriate fields on the register 'Further Files'."
-msgstr ""
+msgstr "Falls Sie weitere Projekt-Dateien hochladen wollen, finden Sie die entsprechenden Felder auf dem Register 'Weitere Dateien'."
 
 #: ./configure.zcml:24
 msgid "Installs the tdf.bildungsportal add-on."
-msgstr ""
+msgstr "Installiert das tdf.bildungsportal add-on."
 
 #: ./project.py:38
 msgid "Invalid email address"
-msgstr ""
+msgstr "Ungültige Email-Adresse"
 
 #: ./project.py:155
 msgid "It is necessary that you accept the Legal Declaration"
-msgstr ""
+msgstr "Es ist erforderlich, dass Sie den Haftungsausschluss akzeptieren"
 
 #: ./center.py:70
 msgid "Legal Disclaimer And Limitations"
-msgstr ""
+msgstr "Haftungsausschluss und -begrenzung"
 
 #: ./center.py:85
 msgid "Legal Disclaimer and Limitations for Downloads"
-msgstr ""
+msgstr "Haftungsausschluss und -begrenzung für Downloads"
 
 #: ./profiles/default/types/tdf.bildungsportal.center.xml
 msgid "LibreOffice Educational Portal"
-msgstr ""
+msgstr "LibreOffice Bildungsportal"
 
 #: ./center.py:38
 msgid "LibreOffice Versions"
-msgstr ""
+msgstr "LibreOffice Versionen"
 
 #: ./project.py:251
 msgid "License of the uploaded files"
-msgstr ""
+msgstr "Lizenz der hochgeladenen Dateien"
 
 #: ./center.py:33
 msgid "Licenses"
-msgstr ""
+msgstr "Lizenzen"
 
 #: ./project.py:217
 msgid "Logo"
-msgstr ""
+msgstr "Logo"
 
 #: ./center.py:16
 msgid "Name of the educational portal"
-msgstr ""
+msgstr "Name des Bildungsportals"
 
 #: ./center_templates/view.pt:169
 msgid "Newest"
-msgstr ""
+msgstr "Neueste"
 
 #: ./project.py:313
 msgid "Please accept the Legal Declaration about the files you'll upload"
-msgstr ""
+msgstr "Bitte akzeptieren Sie den Haftungsausschluss bezüglich der hochgeladenen Dateien"
 
 #: ./project.py:159
 msgid "Please add a Screenshot or a Logo to your project"
-msgstr ""
+msgstr "Bitte fügen Sie ein Bildschirmfoto oder ein Logo Ihrem Projekt hinzu"
 
 #: ./project.py:319
 msgid "Please add a Screenshot or a Logo to your project page"
-msgstr ""
+msgstr "Bitte fügen Sie ein Bildschirmfoto oder Logo Ihrer Projekt-Seite hinzu"
 
 #: ./project.py:325
 msgid "Please choose a license for your release."
-msgstr ""
+msgstr "Bitte wählen Sie eine Lizenz für Ihr Release"
 
 #: ./project.py:197
 msgid "Please choose an appropriate class level (multiple selections possible)."
-msgstr ""
+msgstr "Bitte wählen Sie eine passende Klassenstufe (Mehrfachwahl möglich)."
 
 #: ./project.py:187
 msgid "Please choose an appropriate school subject (multiple selections possible)."
-msgstr ""
+msgstr "Bitte wählen Sie ein passendes Schulfach (Mehrfachwahl möglich)."
 
 #: ./project.py:331
 msgid "Please choose one or more compatible product versions for your release"
-msgstr ""
+msgstr "Bitte wählen Sie ein oder mehrere Produkt-Versionen für Ihr Release"
 
 #: ./project.py:245
 msgid "Please declare that you accept the above legal disclaimer"
-msgstr ""
+msgstr "Bitte erklären Sie, dass Sie den obigen Haftungsausschluss akzeptieren"
 
 #: ./project.py:252
 msgid "Please mark one or more licenses you publish your files"
-msgstr ""
+msgstr "Bitte markieren Sie eine oder mehrere Lizenzen, unter denen Sie Ihre Dateien veröffentlichen"
 
 #: ./project.py:260
 msgid "Please mark one or more program versions with which this files are compatible with."
-msgstr ""
+msgstr "Bitte markieren Sie eine oder mehrere Programm-Versionen, mit denen Ihre Dateien getestet sind"
 
 #: ./project.py:294
 msgid "Please upload your file"
-msgstr ""
+msgstr "Bitte laden Sie Ihre Datei hoch"
 
 #: ./project.py:267
 msgid "Please upload your file."
-msgstr ""
+msgstr "Bitte laden Sie Ihre Datei hoch"
 
 #: ./profiles/default/types/tdf.bildungsportal.project.xml
 msgid "Project"
-msgstr ""
+msgstr "Projekt"
 
 #: ./project.py:173
 msgid "Project Summary"
-msgstr ""
+msgstr "Projekt-Zusammenfassung"
 
 #: ./project.py:166
 msgid "Project Title - minimum 5 and maximum 50 characters"
-msgstr ""
+msgstr "Projekt-Titel- mindestens 5 und höchstens 50 Zeichen"
 
 #: ./project.py:186
 msgid "School Subject"
-msgstr ""
+msgstr "Schulfach"
 
 #: ./center.py:23
 msgid "Scool Subjects"
-msgstr ""
+msgstr "Schulfächer"
 
 #: ./project.py:223
 msgid "Screemshot of the Project"
-msgstr ""
+msgstr "Bildschirmfoto des Projekts"
 
 #: ./center_templates/view.pt:174
 msgid "Search"
-msgstr ""
+msgstr "Suchen"
 
 #: ./center_templates/view.pt:102
 msgid "Search For Class Level"
-msgstr ""
+msgstr "Suche nach Klassenstufen"
 
 #: ./center_templates/view.pt:120
 msgid "Search for Class Level"
-msgstr ""
+msgstr "Suche nach Klassenstufen"
 
 #: ./center_templates/view.pt:139
 msgid "Show"
-msgstr ""
+msgstr "Anzeigen"
 
 #: ./center_templates/view.pt:166
 msgid "Sort On"
-msgstr ""
+msgstr "Sortieren nach"
 
 #: ./center.py:75
 msgid "Text of the Legal Disclaimer and Limitations"
-msgstr ""
+msgstr "Text von Haftungsausschluss und -begrenzung"
 
 #: ./center.py:91
 msgid "Text of the Legal Disclaimer and Limitations for Downlaods"
-msgstr ""
+msgstr "Text von Haftungsausschluss und -begrenzung für Downloads"
 
 #: ./project.py:305
 msgid "The fifth file you want to upload"
-msgstr ""
+msgstr "Die fünfte Datei, die Sie hochladen wollen"
 
 #: ./project.py:266
 msgid "The first file you want to upload"
-msgstr ""
+msgstr "Die erste Datei, die Sie hochladen wollen"
 
 #: ./project.py:299
 msgid "The fourth file you want to upload"
-msgstr ""
+msgstr "Die vierte Datei, die Sie hochladen wollen"
 
 #: ./project.py:351
 msgid "The project title is already in use"
-msgstr ""
+msgstr "Der Projekt-Title wird bereits verwendet"
 
 #: ./project.py:287
 msgid "The second file you want to upload"
-msgstr ""
+msgstr "Die zweite Datei, die Sie hochladen wollen"
 
 #: ./project.py:293
 msgid "The third file you want to upload"
-msgstr ""
+msgstr "Die dritte Datei, die Sie hochladen wollen"
 
 #: ./project.py:165
 msgid "Titel"
-msgstr ""
+msgstr "Titel"
 
 #: ./center.py:69
 msgid "Title for Legal Disclaimer and Limitations"
-msgstr ""
+msgstr "Titel von Haftungsausschluss und -begrenzung"
 
 #: ./center.py:84
 msgid "Title of the Legal Disclaimer and Limitations for Downloads"
-msgstr ""
+msgstr "Titel von Haftungsausschluss und -begrenzung für Downloads"
 
 #: ./configure.zcml:39
 msgid "Uninstalls the tdf.bildungsportal add-on."
-msgstr ""
+msgstr "Deinstalliert das tdf.bildungsportal add-on"
 
 #. Default: "No results were found."
 #: ./center_templates/view.pt:185
@@ -310,11 +310,11 @@ msgstr ""
 
 #: ./center_templates/view.pt:231
 msgid "for"
-msgstr ""
+msgstr "für"
 
 #: ./center_templates/view.pt:229
 msgid "in"
-msgstr ""
+msgstr "in"
 
 #. Default: "Every Class Level"
 #: ./center_templates/view.pt:162
