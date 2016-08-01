@@ -34,7 +34,7 @@
     <h1 i18n:translate=""> <span i18n:name="portal_title" tal:content="context/title"  /></h1>
 
     <div id="most_recent">
-        <h2 i18n:translate="most_recent_projects">Most Recent Projects</h2>
+        <h2 i18n:translate="">Most Recent Projects</h2>
         <div class=""
                     tal:define="results python:view.get_latest_projects();
                                 Batch python:modules['Products.CMFPlone'].Batch;
@@ -66,7 +66,7 @@
     </div>
 
     <div id="most_recent">
-        <h2 i18n:translate="most_popular_projects">Most Popular</h2>
+        <h2 i18n:translate="">Most Popular</h2>
         <div class=""
                     tal:define="results python:view.get_most_popular_projects();
                                 Batch python:modules['Products.CMFPlone'].Batch;
@@ -133,7 +133,7 @@
     </div>
 
             <div class="panbildung">
-                <h2>Search for Educational Projects</h2>
+                <h2 i18n:translate="">Search for Educational Projects</h2>
                 <div id="sort-by">
                     <form id="product_select" style="margin-bottom: 1em" tal:attributes="action string:${context/absolute_url}">
                         <label class="hiddenStructure" i18n:translate="">Show</label>
@@ -151,7 +151,7 @@
                                         tal:attributes="value version; selected python: (currentVersion==version, 'selected', nothing)" />
                             </tal:block>
                             <option value="any" tal:attributes="selected python: (currentVersion in ['', 'any'],'selected',nothing)"
-                                          i18n:translate="label_any_version">Every LibreOffice Version</option>
+                                          i18n:translate="">Every LibreOffice Version</option>
                         </select>
 
                         <select name="getClasslevel" onchange="this.form.submit()">
@@ -160,7 +160,7 @@
                                         tal:attributes="value classlevel; selected python: (currentClasslevel==classlevel, 'selected', nothing)" />
                             </tal:block>
                             <option value="any" tal:attributes="selected python: (currentClasslevel in ['', 'any'], 'selected', nothing)"
-                                        i18n:translate="label_any_classlevel">Every Class Level</option>
+                                        i18n:translate="">Every Class Level</option>
                         </select>
 
                         <label for="project-sort" i18n:translate="">Sort On</label>
@@ -182,7 +182,7 @@
 				                        b_size python:10;b_start python:0;b_start request/b_start | b_start;
                                         ">
                         <p tal:condition="not: results">
-                            <strong i18n:translate="description_no_results_found">No results were found.</strong>
+                            <strong i18n:translate="">No results were found.</strong>
                         </p>
                         <p id="numreleases" i18n:translate="">
                             <span tal:replace="python:len(results)" i18n:name="results_eupprojects">234</span> projects matching your criteria.
