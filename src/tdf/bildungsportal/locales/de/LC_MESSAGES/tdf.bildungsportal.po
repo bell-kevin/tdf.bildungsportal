@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tdf.bildungsportal\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI +ZONE\n"
-"PO-Revision-Date: 2016-08-01 20:33+0200\n"
+"PO-Revision-Date: 2016-08-01 21:22+0200\n"
 "Last-Translator: Andreas Mantke <maand@gmx.de>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -52,6 +52,10 @@ msgstr "Alle Schullfächer"
 #: ./project.py:196
 msgid "Class Level"
 msgstr "Jahrgangsstufe"
+
+#: ./project_templates/view.pt:44
+msgid "Class Level(s)"
+msgstr "Jahrgangsstufe(n)"
 
 #: ./project.py:259
 msgid "Compatible with versions of LibreOffice"
@@ -117,6 +121,10 @@ msgstr "Am besten bewertet"
 msgid "Homepage"
 msgstr "Homepage"
 
+#: ./project_templates/view.pt:46
+msgid "Homepage Of The Project"
+msgstr "Homepage des Projekts"
+
 #: ./project.py:211
 msgid "If the project has an external home page, enter its URL (example: 'http://www.mysite.org')."
 msgstr "Falls das Projekt eine externe Homepage hat, tragen Sie die URL (Beispiel: 'http://www.mysite.org') hier ein."
@@ -153,6 +161,10 @@ msgstr "LibreOffice Bildungsportal"
 msgid "LibreOffice Versions"
 msgstr "LibreOffice Versionen"
 
+#: ./project_templates/view.pt:48
+msgid "License"
+msgstr "Lizenz"
+
 #: ./project.py:251
 msgid "License of the uploaded files"
 msgstr "Lizenz der hochgeladenen Dateien"
@@ -162,6 +174,7 @@ msgid "Licenses"
 msgstr "Lizenzen"
 
 #: ./project.py:217
+#: ./project_templates/view.pt:52
 msgid "Logo"
 msgstr "Logo"
 
@@ -237,6 +250,10 @@ msgstr "Bitte laden Sie Ihre Datei hoch"
 msgid "Project"
 msgstr "Projekt"
 
+#: ./project_templates/view.pt:40
+msgid "Project Description"
+msgstr "Projekt-Beschreibung"
+
 #: ./project.py:173
 msgid "Project Summary"
 msgstr "Projekt-Zusammenfassung"
@@ -249,6 +266,10 @@ msgstr "Projekt-Titel- mindestens 5 und höchstens 50 Zeichen"
 msgid "School Subject"
 msgstr "Schulfach"
 
+#: ./project_templates/view.pt:42
+msgid "School Subject(s)"
+msgstr "Schulfach/-fächer"
+
 #: ./center.py:23
 msgid "Scool Subjects"
 msgstr "Schulfächer"
@@ -256,6 +277,10 @@ msgstr "Schulfächer"
 #: ./project.py:223
 msgid "Screemshot of the Project"
 msgstr "Bildschirmfoto des Projekts"
+
+#: ./project_templates/view.pt:59
+msgid "Screenshot"
+msgstr "Bildschirmfoto"
 
 #: ./center_templates/view.pt:174
 msgid "Search"
@@ -281,6 +306,10 @@ msgstr "Anzeigen"
 msgid "Sort On"
 msgstr "Sortieren nach"
 
+#: ./project_templates/view.pt:50
+msgid "Tested With LibreOffice Versions"
+msgstr "Getestet mit den LibreOffice-Versionen"
+
 #: ./center.py:77
 msgid "Text of the Legal Disclaimer and Limitations"
 msgstr "Text von Haftungsausschluss und -begrenzung"
@@ -288,6 +317,10 @@ msgstr "Text von Haftungsausschluss und -begrenzung"
 #: ./center.py:93
 msgid "Text of the Legal Disclaimer and Limitations for Downlaods"
 msgstr "Text von Haftungsausschluss und -begrenzung für Downloads"
+
+#: ./project_templates/view.pt:71
+msgid "The downloadable file"
+msgstr "Die herunter ladbare Datei"
 
 #: ./project.py:305
 msgid "The fifth file you want to upload"
@@ -342,16 +375,6 @@ msgstr "in"
 msgid "label_downloadable_file"
 msgstr ""
 
-#. Default: "The downloadable file"
-#: ./project_templates/view.pt:71
-msgid "label_downloadable_file_name"
-msgstr ""
-
 #: ./configure.zcml:24
 msgid "tdf.bildungsportal"
-msgstr ""
-
-#. Default: "Screenshot"
-#: ./project_templates/view.pt:59
-msgid "title_screenshot"
 msgstr ""
