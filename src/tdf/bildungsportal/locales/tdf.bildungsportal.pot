@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2016-07-31 20:55+0000\n"
+"POT-Creation-Date: 2016-08-01 18:59+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -90,6 +90,14 @@ msgstr ""
 msgid "Enter the text of the legal disclaimer and limitations that should be displayed to the project creator and should be accepted by the owner of the project."
 msgstr ""
 
+#: ./center_templates/view.pt:162
+msgid "Every Class Level"
+msgstr ""
+
+#: ./center_templates/view.pt:153
+msgid "Every LibreOffice Version"
+msgstr ""
+
 #: ./center.py:81
 msgid "Fill in the legal disclaimer, that had to be accepted by the project owner"
 msgstr ""
@@ -162,12 +170,24 @@ msgstr ""
 msgid "Logo"
 msgstr ""
 
+#: ./center_templates/view.pt:69
+msgid "Most Popular"
+msgstr ""
+
+#: ./center_templates/view.pt:37
+msgid "Most Recent Projects"
+msgstr ""
+
 #: ./center.py:16
 msgid "Name of the educational portal"
 msgstr ""
 
 #: ./center_templates/view.pt:169
 msgid "Newest"
+msgstr ""
+
+#: ./center_templates/view.pt:185
+msgid "No results were found."
 msgstr ""
 
 #: ./project.py:313
@@ -254,6 +274,10 @@ msgstr ""
 msgid "Search for Class Level"
 msgstr ""
 
+#: ./center_templates/view.pt:136
+msgid "Search for Educational Projects"
+msgstr ""
+
 #: ./center_templates/view.pt:139
 msgid "Show"
 msgstr ""
@@ -310,27 +334,12 @@ msgstr ""
 msgid "Uninstalls the tdf.bildungsportal add-on."
 msgstr ""
 
-#. Default: "No results were found."
-#: ./center_templates/view.pt:185
-msgid "description_no_results_found"
-msgstr ""
-
 #: ./center_templates/view.pt:231
 msgid "for"
 msgstr ""
 
 #: ./center_templates/view.pt:229
 msgid "in"
-msgstr ""
-
-#. Default: "Every Class Level"
-#: ./center_templates/view.pt:162
-msgid "label_any_classlevel"
-msgstr ""
-
-#. Default: "Every LibreOffice Version"
-#: ./center_templates/view.pt:153
-msgid "label_any_version"
 msgstr ""
 
 #. Default: "<img src=\"++resource++tdf.bildungsportal/download_icon.gif\" />"
@@ -341,16 +350,6 @@ msgstr ""
 #. Default: "The downloadable file"
 #: ./project_templates/view.pt:71
 msgid "label_downloadable_file_name"
-msgstr ""
-
-#. Default: "Most Popular"
-#: ./center_templates/view.pt:69
-msgid "most_popular_projects"
-msgstr ""
-
-#. Default: "Most Recent Projects"
-#: ./center_templates/view.pt:37
-msgid "most_recent_projects"
 msgstr ""
 
 #: ./configure.zcml:24
