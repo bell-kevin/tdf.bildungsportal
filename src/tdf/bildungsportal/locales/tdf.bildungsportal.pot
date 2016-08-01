@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2016-08-01 18:59+0000\n"
+"POT-Creation-Date: 2016-08-01 19:25+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -56,6 +56,10 @@ msgstr ""
 #: ./center.py:53
 #: ./project.py:196
 msgid "Class Level"
+msgstr ""
+
+#: ./project_templates/view.pt:44
+msgid "Class Level(s)"
 msgstr ""
 
 #: ./project.py:259
@@ -122,6 +126,10 @@ msgstr ""
 msgid "Homepage"
 msgstr ""
 
+#: ./project_templates/view.pt:46
+msgid "Homepage Of The Project"
+msgstr ""
+
 #: ./project.py:211
 msgid "If the project has an external home page, enter its URL (example: 'http://www.mysite.org')."
 msgstr ""
@@ -158,6 +166,10 @@ msgstr ""
 msgid "LibreOffice Versions"
 msgstr ""
 
+#: ./project_templates/view.pt:48
+msgid "License"
+msgstr ""
+
 #: ./project.py:251
 msgid "License of the uploaded files"
 msgstr ""
@@ -167,6 +179,7 @@ msgid "Licenses"
 msgstr ""
 
 #: ./project.py:217
+#: ./project_templates/view.pt:52
 msgid "Logo"
 msgstr ""
 
@@ -242,6 +255,10 @@ msgstr ""
 msgid "Project"
 msgstr ""
 
+#: ./project_templates/view.pt:40
+msgid "Project Description"
+msgstr ""
+
 #: ./project.py:173
 msgid "Project Summary"
 msgstr ""
@@ -254,12 +271,20 @@ msgstr ""
 msgid "School Subject"
 msgstr ""
 
+#: ./project_templates/view.pt:42
+msgid "School Subject(s)"
+msgstr ""
+
 #: ./center.py:23
 msgid "Scool Subjects"
 msgstr ""
 
 #: ./project.py:223
 msgid "Screemshot of the Project"
+msgstr ""
+
+#: ./project_templates/view.pt:59
+msgid "Screenshot"
 msgstr ""
 
 #: ./center_templates/view.pt:174
@@ -286,12 +311,20 @@ msgstr ""
 msgid "Sort On"
 msgstr ""
 
+#: ./project_templates/view.pt:50
+msgid "Tested With LibreOffice Versions"
+msgstr ""
+
 #: ./center.py:77
 msgid "Text of the Legal Disclaimer and Limitations"
 msgstr ""
 
 #: ./center.py:93
 msgid "Text of the Legal Disclaimer and Limitations for Downlaods"
+msgstr ""
+
+#: ./project_templates/view.pt:71
+msgid "The downloadable file"
 msgstr ""
 
 #: ./project.py:305
@@ -347,16 +380,6 @@ msgstr ""
 msgid "label_downloadable_file"
 msgstr ""
 
-#. Default: "The downloadable file"
-#: ./project_templates/view.pt:71
-msgid "label_downloadable_file_name"
-msgstr ""
-
 #: ./configure.zcml:24
 msgid "tdf.bildungsportal"
-msgstr ""
-
-#. Default: "Screenshot"
-#: ./project_templates/view.pt:59
-msgid "title_screenshot"
 msgstr ""
