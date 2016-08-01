@@ -1,18 +1,20 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: tdf.bildungsportal\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI +ZONE\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2016-08-01 20:33+0200\n"
+"Last-Translator: Andreas Mantke <maand@gmx.de>\n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0\n"
-"Language-Code: en\n"
-"Language-Name: English\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Language-Code: de\n"
+"Language-Name: Deutsch\n"
 "Preferred-Encodings: utf-8 latin1\n"
-"Domain: DOMAIN\n"
+"Domain: tdf.bildungsportal\n"
+"Language: de\n"
+"X-Generator: Poedit 1.8.5\n"
 
 #: ./center_templates/view.pt:34
 msgid "${portal_title}"
@@ -82,6 +84,14 @@ msgstr "Fügen Sie jedweden Haftungsausschluss und -begrenzung für Downloads ei
 #: ./center.py:78
 msgid "Enter the text of the legal disclaimer and limitations that should be displayed to the project creator and should be accepted by the owner of the project."
 msgstr "Fügen Sie den Text für den Haftungsausschluss und -begrenzung ein, der den Projekterstellern angezeigt und von diesen akzeptiert werden muss."
+
+#: ./center_templates/view.pt:162
+msgid "Every Class Level"
+msgstr "Jede Jahrgangsstufe"
+
+#: ./center_templates/view.pt:153
+msgid "Every LibreOffice Version"
+msgstr "Jede LibreOffice-Version"
 
 #: ./center.py:81
 msgid "Fill in the legal disclaimer, that had to be accepted by the project owner"
@@ -155,6 +165,14 @@ msgstr "Lizenzen"
 msgid "Logo"
 msgstr "Logo"
 
+#: ./center_templates/view.pt:69
+msgid "Most Popular"
+msgstr "Best bewertete Projekte"
+
+#: ./center_templates/view.pt:37
+msgid "Most Recent Projects"
+msgstr "Neueste Projekte"
+
 #: ./center.py:16
 msgid "Name of the educational portal"
 msgstr "Name des Bildungsportals"
@@ -162,6 +180,10 @@ msgstr "Name des Bildungsportals"
 #: ./center_templates/view.pt:169
 msgid "Newest"
 msgstr "Neueste"
+
+#: ./center_templates/view.pt:185
+msgid "No results were found."
+msgstr "Es wurden keine Ergebnisse gefunden."
 
 #: ./project.py:313
 msgid "Please accept the Legal Declaration about the files you'll upload"
@@ -247,6 +269,10 @@ msgstr "Suche nach Jahrgangsstufen"
 msgid "Search for Class Level"
 msgstr "Suche nach Jahrgangsstufen"
 
+#: ./center_templates/view.pt:136
+msgid "Search for Educational Projects"
+msgstr "Suche nach Bildungsprojekten"
+
 #: ./center_templates/view.pt:139
 msgid "Show"
 msgstr "Anzeigen"
@@ -303,11 +329,6 @@ msgstr "Titel von Haftungsausschluss und -begrenzung für Downloads"
 msgid "Uninstalls the tdf.bildungsportal add-on."
 msgstr "Deinstalliert das tdf.bildungsportal add-on"
 
-#. Default: "No results were found."
-#: ./center_templates/view.pt:185
-msgid "description_no_results_found"
-msgstr ""
-
 #: ./center_templates/view.pt:231
 msgid "for"
 msgstr "für"
@@ -315,16 +336,6 @@ msgstr "für"
 #: ./center_templates/view.pt:229
 msgid "in"
 msgstr "in"
-
-#. Default: "Every Class Level"
-#: ./center_templates/view.pt:162
-msgid "label_any_classlevel"
-msgstr ""
-
-#. Default: "Every LibreOffice Version"
-#: ./center_templates/view.pt:153
-msgid "label_any_version"
-msgstr ""
 
 #. Default: "<img src=\"++resource++tdf.bildungsportal/download_icon.gif\" />"
 #: ./project_templates/view.pt:68
@@ -334,16 +345,6 @@ msgstr ""
 #. Default: "The downloadable file"
 #: ./project_templates/view.pt:71
 msgid "label_downloadable_file_name"
-msgstr ""
-
-#. Default: "Most Popular"
-#: ./center_templates/view.pt:69
-msgid "most_popular_projects"
-msgstr ""
-
-#. Default: "Most Recent Projects"
-#: ./center_templates/view.pt:37
-msgid "most_recent_projects"
 msgstr ""
 
 #: ./configure.zcml:24
