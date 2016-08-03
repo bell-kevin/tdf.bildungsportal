@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2016-08-01 19:25+0000\n"
+"POT-Creation-Date: 2016-08-03 13:11+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -292,7 +292,7 @@ msgid "Search"
 msgstr ""
 
 #: ./center_templates/view.pt:102
-msgid "Search For Class Level"
+msgid "Search For School Subject"
 msgstr ""
 
 #: ./center_templates/view.pt:120
