@@ -29,8 +29,8 @@
                 <span tal:replace="structure context/@@authenticator/authenticator"/>
                 <p class="portalinfomessage"
                         tal:condition="python: is_editable and not review_state == 'published' "
-                        i18n:domain="plone" i18n:translate="">
-                    Please make sure the relevant project information has been entered and a release has been added to your project.
+                        i18n:domain="tdf.bildungsportal" i18n:translate="">
+                    Please make sure the relevant project information has been entered and one or more files has been added to your project.
                     Once you have finished that you could submit your project for approval (publication).
                 </p>
                 <div class="panproject">
