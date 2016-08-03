@@ -322,13 +322,13 @@ class IBProject(model.Schema):
     @invariant
     def licensenotchoosen(value):
         if not value.licenses_choice:
-            raise Invalid(_(u"Please choose a license for your release."))
+            raise Invalid(_(u"Please choose a license for your file(s)."))
 
 
     @invariant
     def compatibilitynotchoosen(data):
         if not data.compatibility_choice:
-            raise Invalid(_(u"Please choose one or more compatible product versions for your release"))
+            raise Invalid(_(u"Please choose one or more compatible LibreOffice versions for your file(s)"))
 
 
 
