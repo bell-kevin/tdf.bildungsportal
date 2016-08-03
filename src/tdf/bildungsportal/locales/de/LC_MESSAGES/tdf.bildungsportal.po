@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tdf.bildungsportal\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI +ZONE\n"
-"PO-Revision-Date: 2016-08-03 15:12+0200\n"
+"PO-Revision-Date: 2016-08-03 15:53+0200\n"
 "Last-Translator: Andreas Mantke <maand@gmx.de>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -209,8 +209,8 @@ msgid "Please add a Screenshot or a Logo to your project page"
 msgstr "Bitte fügen Sie ein Bildschirmfoto oder Logo Ihrer Projekt-Seite hinzu"
 
 #: project.py:325
-msgid "Please choose a license for your release."
-msgstr "Bitte wählen Sie eine Lizenz für Ihr Release"
+msgid "Please choose a license for your file(s)."
+msgstr "Bitte wählen Sie eine Lizenz für Ihre Dateien"
 
 #: project.py:197
 msgid "Please choose an appropriate class level (multiple selections possible)."
@@ -221,12 +221,16 @@ msgid "Please choose an appropriate school subject (multiple selections possible
 msgstr "Bitte wählen Sie ein passendes Schulfach (Mehrfachwahl möglich)."
 
 #: project.py:331
-msgid "Please choose one or more compatible product versions for your release"
-msgstr "Bitte wählen Sie ein oder mehrere Produkt-Versionen für Ihr Release"
+msgid "Please choose one or more compatible LibreOffice versions for your file(s)"
+msgstr "Bitte wählen Sie eine oder mehrere LibreOffice Versionen, mit denen Ihre Datei(en) getestet sind."
 
 #: project.py:245
 msgid "Please declare that you accept the above legal disclaimer"
 msgstr "Bitte erklären Sie, dass Sie den obigen Haftungsausschluss akzeptieren"
+
+#: project_templates/view.pt:30
+msgid "Please make sure the relevant project information has been entered and one or more files has been added to your project. Once you have finished that you could submit your project for approval (publication)."
+msgstr "Bitte achten Sie darauf, dass Sie alle relevanten Projekt-Informationen eingegeben und eine oder mehrere Dateien Ihrem Projekt hinzugefügt haben. Sobald Sie dies erledigt haben, können Sie Ihr Projekt zur Veröffentlichung einreichen."
 
 #: project.py:252
 msgid "Please mark one or more licenses you publish your files"
