@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2016-08-03 13:11+0000\n"
+"POT-Creation-Date: 2016-08-03 13:53+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -216,7 +216,7 @@ msgid "Please add a Screenshot or a Logo to your project page"
 msgstr ""
 
 #: ./project.py:325
-msgid "Please choose a license for your release."
+msgid "Please choose a license for your file(s)."
 msgstr ""
 
 #: ./project.py:197
@@ -228,11 +228,15 @@ msgid "Please choose an appropriate school subject (multiple selections possible
 msgstr ""
 
 #: ./project.py:331
-msgid "Please choose one or more compatible product versions for your release"
+msgid "Please choose one or more compatible LibreOffice versions for your file(s)"
 msgstr ""
 
 #: ./project.py:245
 msgid "Please declare that you accept the above legal disclaimer"
+msgstr ""
+
+#: ./project_templates/view.pt:30
+msgid "Please make sure the relevant project information has been entered and one or more files has been added to your project. Once you have finished that you could submit your project for approval (publication)."
 msgstr ""
 
 #: ./project.py:252
