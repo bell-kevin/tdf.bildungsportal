@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2016-08-03 13:53+0000\n"
+"POT-Creation-Date: 2016-08-04 12:40+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,12 +21,16 @@ msgstr ""
 msgid ""
 msgstr ""
 
-#: ./center_templates/view.pt:34
+#: ./center_templates/view.pt:35
 msgid "${portal_title}"
 msgstr ""
 
-#: ./center_templates/view.pt:188
+#: ./center_templates/view.pt:191
 msgid "${results_eupprojects} projects matching your criteria."
+msgstr ""
+
+#: ./center_templates/ownprojects.pt:63
+msgid "<img src=\"++resource++tdf.extensionuploadcenter/yellowarrow.png\" alt=\"\" /> ${product_title_bildungsportal_project}"
 msgstr ""
 
 #: ./profiles/default/types/tdf.bildungsportal.center.xml
@@ -49,11 +53,11 @@ msgstr ""
 msgid "Add a screenshot by clicking the 'Browse' button."
 msgstr ""
 
-#: ./center_templates/view.pt:142
+#: ./center_templates/view.pt:145
 msgid "All School Subjects"
 msgstr ""
 
-#: ./center.py:53
+#: ./center.py:60
 #: ./project.py:196
 msgid "Class Level"
 msgstr ""
@@ -78,35 +82,39 @@ msgstr ""
 msgid "Description of the educational portal"
 msgstr ""
 
-#: ./center.py:101
+#: ./center.py:108
 msgid "EMail address for the messages about new releases"
 msgstr ""
 
-#: ./center.py:102
+#: ./center.py:25
+msgid "Educational Project Name"
+msgstr ""
+
+#: ./center.py:109
 msgid "Enter a email address to which information about a new release should be send"
 msgstr ""
 
-#: ./center.py:94
+#: ./center.py:101
 msgid "Enter any legal disclaimer and limitations for downloads that should appear on each page for dowloadable files."
 msgstr ""
 
-#: ./center.py:78
+#: ./center.py:85
 msgid "Enter the text of the legal disclaimer and limitations that should be displayed to the project creator and should be accepted by the owner of the project."
 msgstr ""
 
-#: ./center_templates/view.pt:162
+#: ./center_templates/view.pt:165
 msgid "Every Class Level"
 msgstr ""
 
-#: ./center_templates/view.pt:153
+#: ./center_templates/view.pt:156
 msgid "Every LibreOffice Version"
 msgstr ""
 
-#: ./center.py:81
+#: ./center.py:88
 msgid "Fill in the legal disclaimer, that had to be accepted by the project owner"
 msgstr ""
 
-#: ./center.py:96
+#: ./center.py:103
 msgid "Fill in the text for the legal download disclaimer"
 msgstr ""
 
@@ -118,7 +126,7 @@ msgstr ""
 msgid "Further Fields for File uploads to this project"
 msgstr ""
 
-#: ./center_templates/view.pt:168
+#: ./center_templates/view.pt:171
 msgid "Highest Rated"
 msgstr ""
 
@@ -150,11 +158,11 @@ msgstr ""
 msgid "It is necessary that you accept the Legal Declaration"
 msgstr ""
 
-#: ./center.py:72
+#: ./center.py:79
 msgid "Legal Disclaimer And Limitations"
 msgstr ""
 
-#: ./center.py:87
+#: ./center.py:94
 msgid "Legal Disclaimer and Limitations for Downloads"
 msgstr ""
 
@@ -162,7 +170,7 @@ msgstr ""
 msgid "LibreOffice Educational Portal"
 msgstr ""
 
-#: ./center.py:38
+#: ./center.py:45
 msgid "LibreOffice Versions"
 msgstr ""
 
@@ -174,7 +182,7 @@ msgstr ""
 msgid "License of the uploaded files"
 msgstr ""
 
-#: ./center.py:33
+#: ./center.py:40
 msgid "Licenses"
 msgstr ""
 
@@ -183,23 +191,27 @@ msgstr ""
 msgid "Logo"
 msgstr ""
 
-#: ./center_templates/view.pt:69
+#: ./center_templates/view.pt:72
 msgid "Most Popular"
 msgstr ""
 
-#: ./center_templates/view.pt:37
+#: ./center_templates/view.pt:40
 msgid "Most Recent Projects"
+msgstr ""
+
+#: ./center.py:26
+msgid "Name of the Educational projects, e.g. only Educational Projects and Files for LibreOffice"
 msgstr ""
 
 #: ./center.py:16
 msgid "Name of the educational portal"
 msgstr ""
 
-#: ./center_templates/view.pt:169
+#: ./center_templates/view.pt:172
 msgid "Newest"
 msgstr ""
 
-#: ./center_templates/view.pt:185
+#: ./center_templates/view.pt:188
 msgid "No results were found."
 msgstr ""
 
@@ -279,7 +291,7 @@ msgstr ""
 msgid "School Subject(s)"
 msgstr ""
 
-#: ./center.py:23
+#: ./center.py:30
 msgid "Scool Subjects"
 msgstr ""
 
@@ -291,27 +303,27 @@ msgstr ""
 msgid "Screenshot"
 msgstr ""
 
-#: ./center_templates/view.pt:174
+#: ./center_templates/view.pt:177
 msgid "Search"
 msgstr ""
 
-#: ./center_templates/view.pt:102
+#: ./center_templates/view.pt:105
 msgid "Search For School Subject"
 msgstr ""
 
-#: ./center_templates/view.pt:120
+#: ./center_templates/view.pt:123
 msgid "Search for Class Level"
 msgstr ""
 
-#: ./center_templates/view.pt:136
+#: ./center_templates/view.pt:139
 msgid "Search for Educational Projects"
 msgstr ""
 
-#: ./center_templates/view.pt:139
+#: ./center_templates/view.pt:142
 msgid "Show"
 msgstr ""
 
-#: ./center_templates/view.pt:166
+#: ./center_templates/view.pt:169
 msgid "Sort On"
 msgstr ""
 
@@ -319,11 +331,11 @@ msgstr ""
 msgid "Tested With LibreOffice Versions"
 msgstr ""
 
-#: ./center.py:77
+#: ./center.py:84
 msgid "Text of the Legal Disclaimer and Limitations"
 msgstr ""
 
-#: ./center.py:93
+#: ./center.py:100
 msgid "Text of the Legal Disclaimer and Limitations for Downlaods"
 msgstr ""
 
@@ -355,15 +367,19 @@ msgstr ""
 msgid "The third file you want to upload"
 msgstr ""
 
+#: ./center_templates/ownprojects.pt:13
+msgid "This are your projects on this site:"
+msgstr ""
+
 #: ./project.py:165
 msgid "Title"
 msgstr ""
 
-#: ./center.py:71
+#: ./center.py:78
 msgid "Title for Legal Disclaimer and Limitations"
 msgstr ""
 
-#: ./center.py:86
+#: ./center.py:93
 msgid "Title of the Legal Disclaimer and Limitations for Downloads"
 msgstr ""
 
@@ -371,11 +387,15 @@ msgstr ""
 msgid "Uninstalls the tdf.bildungsportal add-on."
 msgstr ""
 
-#: ./center_templates/view.pt:231
+#: ./center_templates/ownprojects.pt:12
+msgid "Your Own Projects"
+msgstr ""
+
+#: ./center_templates/view.pt:234
 msgid "for"
 msgstr ""
 
-#: ./center_templates/view.pt:229
+#: ./center_templates/view.pt:232
 msgid "in"
 msgstr ""
 
