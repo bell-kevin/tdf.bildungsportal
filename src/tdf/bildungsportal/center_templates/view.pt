@@ -28,10 +28,13 @@
                         SearchableText request/SearchableText | string:;
                         sort_on   request/sort_on | string:positive_ratings;
                         herePath python:'/'.join(context.getPhysicalPath());
+                        isAnon context/@@plone_portal_state/anonymous;
                         searchForProducts python:request['QUERY_STRING']">
 
      <span tal:replace="structure context/@@authenticator/authenticator"/>
     <h1 i18n:translate=""> <span i18n:name="portal_title" tal:content="context/title"  /></h1>
+
+         <div tal:condition="not: isAnon" tal:replace="structure provider:plone.abovecontenttitle" />
 
     <div id="most_recent">
         <h2 i18n:translate="">Most Recent Projects</h2>

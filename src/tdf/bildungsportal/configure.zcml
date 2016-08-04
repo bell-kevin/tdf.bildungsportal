@@ -77,4 +77,17 @@
     directory="resources" />
 
 
+
+  <browser:viewlet
+      name="ownprojects"
+      for="tdf.bildungsportal.center.IBCenter"
+      view="plone.app.layout.globals.interfaces.IViewView"
+      manager="plone.app.layout.viewlets.interfaces.IAboveContentTitle"
+      class="tdf.bildungsportal.center.CenterOwnProjectsViewlet"
+      template="center_templates/ownprojects.pt"
+      permission="zope2.View"
+      />
+
+
+
 </configure>

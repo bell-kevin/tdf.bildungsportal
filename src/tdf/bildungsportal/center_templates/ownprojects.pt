@@ -17,7 +17,7 @@
                     user python:mt.getAuthenticatedMember();
                     current_user python:user.getUserName();
                     results python:container.portal_catalog(
-                                               portal_type='tdf.bildungsortal.project',
+                                               portal_type='tdf.bildungsportal.project',
                                                sort_on='Date',
                                                sort_order='reverse',
                                                Creator = current_user
@@ -56,14 +56,16 @@
 
 </div>
 
-
-<h4>Submit a new <span tal:replace="context/product_title">LibreOffice Educational Project</span></h4>
-        <p>If you already created a new <span tal:replace="context/product_title">LibreOffice Educational Project</span>, please submit your new<br />
+    <h4>Submit a new <span tal:replace="context/product_title">Extensions</span></h4>
+    <p>If you already created a new <span tal:replace="context/product_title">educational material project for LibreOffice</span>, please submit your new<br />
     <a class="pointer"  tal:attributes="href string:${context/absolute_url}/++add++tdf.bildungsportal.project" i18n:translate="">
                             <img src="++resource++tdf.extensionuploadcenter/yellowarrow.png" alt="" />
-                            <span tal:content="context/product_title | string:educational_project" i18n:name="product_title_educational_project" />
+                            <span tal:content="context/product_title | string:bildungsportal_project" i18n:name="product_title_bildungsportal_project" />
     </a>
 </p>
+
+
+
 
 
 </div>
