@@ -318,19 +318,15 @@ class IBProject(model.Schema):
         if not data.screenshot and not data.project_logo:
             raise ProvideScreenshotLogo(_(u'Please add a Screenshot or a Logo to your project page'))
 
-
     @invariant
     def licensenotchoosen(value):
         if not value.licenses_choice:
             raise Invalid(_(u"Please choose a license for your file(s)."))
 
-
     @invariant
     def compatibilitynotchoosen(data):
         if not data.compatibility_choice:
             raise Invalid(_(u"Please choose one or more compatible LibreOffice versions for your file(s)"))
-
-
 
 
 class ValidateBProjectUniqueness(validator.SimpleFieldValidator):

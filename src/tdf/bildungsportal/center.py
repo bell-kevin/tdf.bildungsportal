@@ -20,12 +20,10 @@ class IBCenter(model.Schema):
         description=_(u"Description of the educational portal"),
     )
 
-
     product_title = schema.TextLine(
         title=_(u"Educational Project Name"),
         description=_(u"Name of the Educational projects, e.g. only Educational Projects and Files for LibreOffice"),
     )
-
 
     available_schoolsubjects = schema.List(title=_(u"Scool Subjects"),
                                            default=['Deutsch',
